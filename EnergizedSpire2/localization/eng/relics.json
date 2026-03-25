@@ -5,7 +5,10 @@
   "ENERGIZEDSPIRE2-TABASCO_SAUCE.title": "Tabasco Sauce",
   "ENERGIZEDSPIRE2-TABASCO_SAUCE.description": "Gain {Energy:energyIcons()} at the start of your turn. Healing effects are reduced by [blue]50%[/blue].",
   "ENERGIZEDSPIRE2-TABASCO_SAUCE.flavor": "Ah, that's hot! That is hot!",
+  "ENERGIZEDSPIRE2-HIGH_HEELS.title": "High Heels",
+  "ENERGIZEDSPIRE2-HIGH_HEELS.description": "Gain {Energy:energyIcons()} at the start of your turn. At the start of combat, lose [blue]1[/blue] [gold]Dexterity[/gold] and shuffle [blue]{Cards}[/blue] [red]Clumsy[/red] into your [gold]Draw Pile[/gold].",
+  "ENERGIZEDSPIRE2-HIGH_HEELS.flavor": "",
   "ENERGIZEDSPIRE2-RED_ROSE.title": "Red Rose",
-  "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns.[/gold]",
+  "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn."
 }

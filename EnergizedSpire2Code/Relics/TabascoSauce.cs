@@ -30,6 +30,7 @@ public class TabascoSauce : EnergizedSpire2Relic
         return player != Owner ? amount : amount + DynamicVars.Energy.IntValue;
     }
 
+    // Rest Site calls ModifyHealAmount twice for some reason. We need to multiply by 2 to counteract this.
     public override decimal ModifyRestSiteHealAmount(Creature creature, decimal amount)
     {
         return amount * 2;
@@ -44,7 +45,7 @@ public class TabascoSauce : EnergizedSpire2Relic
         }
 
         return shouldTrigger
-            ? amount * (decimal)0.5
+            ? amount * 0.5M
             : amount;
     }
 }
