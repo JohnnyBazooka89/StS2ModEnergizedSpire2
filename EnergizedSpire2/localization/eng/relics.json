@@ -1,6 +1,6 @@
 {
   "ENERGIZEDSPIRE2-ROTTING_SKULL.title": "Rotting Skull",
-  "ENERGIZEDSPIRE2-ROTTING_SKULL.description": "If your HP is at or below [blue]50%[/blue], gain {Energy:energyIcons()} and draw [blue]1[/blue] additional card at the start of your turn.",
+  "ENERGIZEDSPIRE2-ROTTING_SKULL.description": "If your HP is at or below [blue]50%[/blue], gain {Energy:energyIcons()} and draw [blue]{Cards}[/blue] additional card at the start of your turn.",
   "ENERGIZEDSPIRE2-ROTTING_SKULL.flavor": "Find the other one too! Is this the beginning of a new collection?",
   "ENERGIZEDSPIRE2-TABASCO_SAUCE.title": "Tabasco Sauce",
   "ENERGIZEDSPIRE2-TABASCO_SAUCE.description": "Gain {Energy:energyIcons()} at the start of your turn. Healing effects are reduced by [blue]50%[/blue].",
@@ -8,6 +8,9 @@
   "ENERGIZEDSPIRE2-HIGH_HEELS.title": "High Heels",
   "ENERGIZEDSPIRE2-HIGH_HEELS.description": "Gain {Energy:energyIcons()} at the start of your turn. At the start of combat, lose [blue]1[/blue] [gold]Dexterity[/gold] and shuffle [blue]{Cards}[/blue] [red]Clumsy[/red] into your [gold]Draw Pile[/gold].",
   "ENERGIZEDSPIRE2-HIGH_HEELS.flavor": "",
+  "ENERGIZEDSPIRE2-POGO_STICK.title": "Pogo Stick",
+  "ENERGIZEDSPIRE2-POGO_STICK.description": "Gain {Energy:energyIcons()} at the start of your turn. Whenever you trigger [gold]Sly[/gold], shuffle [blue]{Cards}[/blue] [red]Dazed[/red] into your [gold]Draw Pile[/gold].",
+  "ENERGIZEDSPIRE2-POGO_STICK.flavor": "Boing, boing, boing...",
   "ENERGIZEDSPIRE2-RED_ROSE.title": "Red Rose",
   "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn."

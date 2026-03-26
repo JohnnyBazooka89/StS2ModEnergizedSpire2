@@ -12,7 +12,6 @@ using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
-using MegaCrit.Sts2.Core.Models.Relics;
 using MegaCrit.Sts2.Core.Rooms;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
@@ -24,9 +23,9 @@ public class HighHeels : EnergizedSpire2Relic
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
+        new EnergyVar(1),
         new PowerVar<DexterityPower>(-1M),
         new CardsVar(1),
-        new EnergyVar(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>

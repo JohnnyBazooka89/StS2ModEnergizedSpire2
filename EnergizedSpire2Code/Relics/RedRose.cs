@@ -18,8 +18,8 @@ public class RedRose : EnergizedSpire2Relic
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new PowerVar<ThornsPower>(1M),
-        new EnergyVar(1)
+        new EnergyVar(1),
+        new PowerVar<ThornsPower>(1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
