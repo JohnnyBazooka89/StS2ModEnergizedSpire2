@@ -57,8 +57,8 @@ public class HighHeels : EnergizedSpire2Relic
         }
 
         highHeels.Flash();
-        await PowerCmd.Apply<DexterityPower>(highHeels.Owner.Creature,
-            highHeels.DynamicVars.Dexterity.BaseValue, highHeels.Owner.Creature, null);
+        await PowerCmd.Apply<DexterityPower>(highHeels.Owner.Creature, -highHeels.DynamicVars.Dexterity.BaseValue,
+            highHeels.Owner.Creature, null);
     }
 
     public override async Task BeforeHandDraw(
