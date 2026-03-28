@@ -14,10 +14,16 @@
   "ENERGIZEDSPIRE2-OLD_T_V.title": "Old TV",
   "ENERGIZEDSPIRE2-OLD_T_V.description": "Gain {Energy:energyIcons()} at the start of your turn. At the start of combat, shuffle [blue]{Cards}[/blue] [red]Reception Problems[/red] into your [gold]Draw Pile[/gold].",
   "ENERGIZEDSPIRE2-OLD_T_V.flavor": "Too old to use, too good to throw away.",
-  "ENERGIZEDSPIRE2-RED_ROSE.title": "Red Rose",
-  "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
-  "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn.",
   "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.title": "Aggression Protocol",
   "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.description": "Gain {Energy:energyIcons()} at the start of your turn. Attacks must be played before other cards.",
-  "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.flavor": "Prioritization updated: Violence first, questions later."
+  "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.flavor": "Prioritization updated: Violence first, questions later.",
+  "ENERGIZEDSPIRE2-FADING_CONSTELLATION.title": "Fading Constellation",
+  "ENERGIZEDSPIRE2-FADING_CONSTELLATION.description": "At the start of your turn, gain {Energy:energyIcons()} and lose {Stars:starIcons()}.",
+  "ENERGIZEDSPIRE2-FADING_CONSTELLATION.flavor": "The constellations fade, but you press on.",
+  "ENERGIZEDSPIRE2-ROYAL_COFFERS.title": "Royal Coffers",
+  "ENERGIZEDSPIRE2-ROYAL_COFFERS.description": "If you have at least [blue]{Gold}[/blue] unspent [gold]Gold[/gold], gain {Energy:energyIcons()} at the start of your turn.",
+  "ENERGIZEDSPIRE2-ROYAL_COFFERS.flavor": "Money doesn't buy happiness. Just energy.",
+  "ENERGIZEDSPIRE2-RED_ROSE.title": "Red Rose",
+  "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
+  "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn."
 }

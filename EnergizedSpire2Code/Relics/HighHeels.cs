@@ -51,7 +51,7 @@ public class HighHeels : EnergizedSpire2Relic
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
         HighHeels highHeels = this;
-        if (!(room is CombatRoom))
+        if (room is not CombatRoom)
         {
             return;
         }
