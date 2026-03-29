@@ -36,14 +36,12 @@ public class TabascoSauce : EnergizedSpire2Relic
 
     public override decimal ModifyHealAmount(Creature creature, decimal amount)
     {
-        bool shouldTrigger = creature.Player == Owner;
-        if (shouldTrigger)
+        if (creature.Player != Owner)
         {
-            Flash();
+            return amount;
         }
 
-        return shouldTrigger
-            ? amount * 0.5M
-            : amount;
+        Flash();
+        return amount * 0.5M;
     }
 }

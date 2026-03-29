@@ -11,11 +11,11 @@ using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Cards;
 
-[Pool(typeof(TokenCardPool))]
+[Pool(typeof(CurseCardPool))]
 public class ReceptionProblems : EnergizedSpire2Card
 {
     public ReceptionProblems()
-        : base(-1, CardType.Curse, CardRarity.Token, TargetType.None)
+        : base(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
     {
     }
 
