@@ -12,20 +12,20 @@ using MegaCrit.Sts2.Core.Rooms;
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class RedRose : EnergizedSpire2Relic
+public class BrassCoil : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
-        new PowerVar<ThornsPower>(1M)
+        new PowerVar<ArtifactPower>(1M)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this),
-        HoverTipFactory.FromPower<ThornsPower>()
+        HoverTipFactory.FromPower<ArtifactPower>()
     ];
 
     public override decimal ModifyMaxEnergy(Player player, decimal amount)
@@ -38,7 +38,7 @@ public class RedRose : EnergizedSpire2Relic
         if (creature.Side == Owner.Creature.Side)
             return Task.CompletedTask;
         Flash();
-        return PowerCmd.Apply<ThornsPower>(creature, DynamicVars["ThornsPower"].BaseValue, null, null);
+        return PowerCmd.Apply<ArtifactPower>(creature, DynamicVars["ArtifactPower"].BaseValue, null, null);
     }
 
     public override async Task AfterRoomEntered(AbstractRoom room)
@@ -48,6 +48,7 @@ public class RedRose : EnergizedSpire2Relic
         IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         Flash();
-        await PowerCmd.Apply<ThornsPower>(targets, DynamicVars["ThornsPower"].BaseValue, null, null);
+        decimal factor = targets.Count() == 1 ? 2M : 1M;
+        await PowerCmd.Apply<ArtifactPower>(targets, DynamicVars["ArtifactPower"].BaseValue * factor, null, null);
     }
 }

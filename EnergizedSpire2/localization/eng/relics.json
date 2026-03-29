@@ -23,6 +23,12 @@
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.title": "Royal Coffers",
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.description": "If you have at least [blue]{Gold}[/blue] unspent [gold]Gold[/gold], gain {Energy:energyIcons()} at the start of your turn.",
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.flavor": "Money doesn't buy happiness. Just energy.",
+  "ENERGIZEDSPIRE2-BRASS_COIL.title": "Brass Coil",
+  "ENERGIZEDSPIRE2-BRASS_COIL.description": "Gain {Energy:energyIcons()} at the start of your turn. Enemies start combat with [blue]{ArtifactPower}[/blue] [gold]Artifact[/gold]. In single-enemy combats, the enemy gains [blue]2[/blue] [gold]Artifact[/gold] instead.",
+  "ENERGIZEDSPIRE2-BRASS_COIL.flavor": "A courtesy before the inevitable.",
+  "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.title": "Necrotic Scythe",
+  "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.description": "The first time each turn you play a card that costs {EnergyThreshold:energyIcons()} or more, gain {Energy:energyIcons()}.",
+  "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.flavor": "Heavy swings feel lighter.",
   "ENERGIZEDSPIRE2-RED_ROSE.title": "Red Rose",
   "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn."

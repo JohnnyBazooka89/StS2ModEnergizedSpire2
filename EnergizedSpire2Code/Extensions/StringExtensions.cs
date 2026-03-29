@@ -1,6 +1,4 @@
-﻿using System.IO;
-
-namespace EnergizedSpire2.EnergizedSpire2Code.Extensions;
+﻿namespace EnergizedSpire2.EnergizedSpire2Code.Extensions;
 
 //Mostly utilities to get asset paths.
 public static class StringExtensions
@@ -39,7 +37,7 @@ public static class StringExtensions
     {
         return Path.Join(MainFile.ModId, "images", "relics", "outline", path);
     }
-    
+
     public static string BigRelicImagePath(this string path)
     {
         return Path.Join(MainFile.ModId, "images", "relics", "big", path);
