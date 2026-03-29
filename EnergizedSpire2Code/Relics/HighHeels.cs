@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -50,15 +52,14 @@ public class HighHeels : EnergizedSpire2Relic
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
-        HighHeels highHeels = this;
         if (room is not CombatRoom)
         {
             return;
         }
 
-        highHeels.Flash();
-        await PowerCmd.Apply<DexterityPower>(highHeels.Owner.Creature, -highHeels.DynamicVars.Dexterity.BaseValue,
-            highHeels.Owner.Creature, null);
+        Flash();
+        await PowerCmd.Apply<DexterityPower>(Owner.Creature, -DynamicVars.Dexterity.BaseValue,
+            Owner.Creature, null);
     }
 
     public override async Task BeforeHandDraw(
@@ -66,17 +67,16 @@ public class HighHeels : EnergizedSpire2Relic
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-        HighHeels highHeels = this;
-        if (player != highHeels.Owner || combatState.RoundNumber != 1)
+        if (player != Owner || combatState.RoundNumber != 1)
         {
             return;
         }
 
-        highHeels.Flash();
+        Flash();
         List<CardModel> cards = new List<CardModel>();
-        for (int index = 0; index < highHeels.DynamicVars.Cards.IntValue; index++)
+        for (int index = 0; index < DynamicVars.Cards.IntValue; index++)
         {
-            cards.Add(combatState.CreateCard<Clumsy>(highHeels.Owner));
+            cards.Add(combatState.CreateCard<Clumsy>(Owner));
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,

@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using EnergizedSpire2.EnergizedSpire2Code.Powers;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -46,9 +48,8 @@ public class ReceptionProblems : EnergizedSpire2Card
         if (card != this || Pile.Type != PileType.Hand)
             return;
 
-        ReceptionProblems cardSource = this;
-        await CreatureCmd.TriggerAnim(cardSource.Owner.Creature, "Cast", cardSource.Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<ReceptionProblemsPower>(cardSource.Owner.Creature,
-            cardSource.DynamicVars["FocusPower"].BaseValue, cardSource.Owner.Creature, cardSource);
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
+        await PowerCmd.Apply<ReceptionProblemsPower>(Owner.Creature,
+            DynamicVars["FocusPower"].BaseValue, Owner.Creature, this);
     }
 }

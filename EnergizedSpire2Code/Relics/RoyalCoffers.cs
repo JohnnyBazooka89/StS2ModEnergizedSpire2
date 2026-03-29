@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Relics;
@@ -26,14 +28,13 @@ public class RoyalCoffers : EnergizedSpire2Relic
 
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
-        RoyalCoffers royalCoffers = this;
-        if (side != royalCoffers.Owner.Creature.Side ||
-            royalCoffers.Owner.Gold < royalCoffers.DynamicVars.Gold.BaseValue)
+        if (side != Owner.Creature.Side ||
+            Owner.Gold < DynamicVars.Gold.BaseValue)
         {
             return;
         }
 
-        royalCoffers.Flash();
-        await PlayerCmd.GainEnergy(royalCoffers.DynamicVars.Energy.BaseValue, royalCoffers.Owner);
+        Flash();
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
     }
 }

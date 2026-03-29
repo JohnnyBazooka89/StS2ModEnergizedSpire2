@@ -1,4 +1,6 @@
-﻿namespace EnergizedSpire2.EnergizedSpire2Code.Extensions;
+﻿using System.IO;
+
+namespace EnergizedSpire2.EnergizedSpire2Code.Extensions;
 
 //Mostly utilities to get asset paths.
 public static class StringExtensions

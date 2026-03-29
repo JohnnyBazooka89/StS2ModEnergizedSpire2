@@ -1,4 +1,7 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -43,12 +46,11 @@ public class RedRose : EnergizedSpire2Relic
 
     public override async Task AfterRoomEntered(AbstractRoom room)
     {
-        RedRose redRode = this;
         if (room is not CombatRoom)
             return;
-        IEnumerable<Creature> targets = redRode.Owner.Creature.CombatState.GetOpponentsOf(redRode.Owner.Creature)
+        IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
-        redRode.Flash();
-        await PowerCmd.Apply<StrengthPower>(targets, redRode.DynamicVars["ThornsPower"].BaseValue, null, null);
+        Flash();
+        await PowerCmd.Apply<StrengthPower>(targets, DynamicVars["ThornsPower"].BaseValue, null, null);
     }
 }

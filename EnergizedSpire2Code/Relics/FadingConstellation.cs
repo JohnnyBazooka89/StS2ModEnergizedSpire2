@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
@@ -32,10 +34,9 @@ public class FadingConstellation : EnergizedSpire2Relic
 
     public override async Task AfterPlayerTurnStartLate(PlayerChoiceContext choiceContext, Player player)
     {
-        FadingConstellation fadingConstellation = this;
-        fadingConstellation.Flash();
-        await CreatureCmd.TriggerAnim(fadingConstellation.Owner.Creature, "Cast",
-            fadingConstellation.Owner.Character.CastAnimDelay);
-        await PlayerCmd.LoseStars(fadingConstellation.DynamicVars.Stars.BaseValue, fadingConstellation.Owner);
+        Flash();
+        await CreatureCmd.TriggerAnim(Owner.Creature, "Cast",
+            Owner.Character.CastAnimDelay);
+        await PlayerCmd.LoseStars(DynamicVars.Stars.BaseValue, Owner);
     }
 }

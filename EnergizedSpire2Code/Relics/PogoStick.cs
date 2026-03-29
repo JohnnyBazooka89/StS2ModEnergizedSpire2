@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -37,16 +39,15 @@ public class PogoStick : EnergizedSpire2Relic
 
     public override async Task BeforeCardAutoPlayed(CardModel card, Creature? target, AutoPlayType type)
     {
-        PogoStick pogoStick = this;
-        if (type != AutoPlayType.SlyDiscard || card.Owner != pogoStick.Owner ||
-            pogoStick.Owner.Creature.Side != pogoStick.Owner.Creature.CombatState.CurrentSide)
+        if (type != AutoPlayType.SlyDiscard || card.Owner != Owner ||
+            Owner.Creature.Side != Owner.Creature.CombatState.CurrentSide)
             return;
-        pogoStick.Flash();
+        Flash();
 
         List<CardModel> cards = new List<CardModel>();
-        for (int index = 0; index < pogoStick.DynamicVars.Cards.IntValue; index++)
+        for (int index = 0; index < DynamicVars.Cards.IntValue; index++)
         {
-            cards.Add(pogoStick.Owner.Creature.CombatState.CreateCard<Dazed>(pogoStick.Owner));
+            cards.Add(Owner.Creature.CombatState.CreateCard<Dazed>(Owner));
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,

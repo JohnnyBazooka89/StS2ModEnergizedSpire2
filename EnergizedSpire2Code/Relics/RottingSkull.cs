@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -53,20 +55,18 @@ public class RottingSkull : EnergizedSpire2Relic
 
     private async Task SetActiveIfNecessary()
     {
-        RottingSkull rottingSkull = this;
-        Creature creature = rottingSkull.Owner.Creature;
+        Creature creature = Owner.Creature;
         bool flag = creature.CurrentHp >
-                    creature.MaxHp * (rottingSkull.DynamicVars[_hpThresholdKey].BaseValue / 100M);
-        rottingSkull.Status = flag ? RelicStatus.Normal : RelicStatus.Active;
+                    creature.MaxHp * (DynamicVars[_hpThresholdKey].BaseValue / 100M);
+        Status = flag ? RelicStatus.Normal : RelicStatus.Active;
     }
 
     public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
     {
-        RottingSkull rottingSkull = this;
-        if (side != rottingSkull.Owner.Creature.Side || rottingSkull.Status != RelicStatus.Active)
+        if (side != Owner.Creature.Side || Status != RelicStatus.Active)
             return;
-        rottingSkull.Flash();
-        await PlayerCmd.GainEnergy(rottingSkull.DynamicVars.Energy.BaseValue, rottingSkull.Owner);
+        Flash();
+        await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
     }
 
     public override decimal ModifyHandDraw(Player player, decimal count)

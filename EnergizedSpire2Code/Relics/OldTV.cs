@@ -1,4 +1,6 @@
-﻿using BaseLib.Utils;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using BaseLib.Utils;
 using EnergizedSpire2.EnergizedSpire2Code.Cards;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
@@ -42,17 +44,16 @@ public class OldTV : EnergizedSpire2Relic
         PlayerChoiceContext choiceContext,
         CombatState combatState)
     {
-        OldTV oldTv = this;
-        if (player != oldTv.Owner || combatState.RoundNumber != 1)
+        if (player != Owner || combatState.RoundNumber != 1)
         {
             return;
         }
 
-        oldTv.Flash();
+        Flash();
         List<CardModel> cards = new List<CardModel>();
-        for (int index = 0; index < oldTv.DynamicVars.Cards.IntValue; index++)
+        for (int index = 0; index < DynamicVars.Cards.IntValue; index++)
         {
-            cards.Add(combatState.CreateCard<ReceptionProblems>(oldTv.Owner));
+            cards.Add(combatState.CreateCard<ReceptionProblems>(Owner));
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,

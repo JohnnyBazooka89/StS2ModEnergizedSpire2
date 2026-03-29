@@ -1,4 +1,7 @@
-﻿using EnergizedSpire2.EnergizedSpire2Code.Cards;
+﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using EnergizedSpire2.EnergizedSpire2Code.Cards;
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
@@ -108,28 +111,26 @@ public class ReceptionProblemsPower : EnergizedSpire2Power
         Creature? applier,
         CardModel? cardSource)
     {
-        ReceptionProblemsPower receptionProblemsPower = this;
-        if (amount == receptionProblemsPower.Amount || power != receptionProblemsPower)
+        if (amount == Amount || power != this)
             return;
-        if (receptionProblemsPower._shouldIgnoreNextInstance)
+        if (_shouldIgnoreNextInstance)
         {
-            receptionProblemsPower._shouldIgnoreNextInstance = false;
+            _shouldIgnoreNextInstance = false;
         }
         else
         {
-            await PowerCmd.Apply<FocusPower>(receptionProblemsPower.Owner,
-                receptionProblemsPower.Sign * amount, applier, cardSource, true);
+            await PowerCmd.Apply<FocusPower>(Owner,
+                Sign * amount, applier, cardSource, true);
         }
     }
 
     public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
     {
-        ReceptionProblemsPower power = this;
-        if (side != power.Owner.Side)
+        if (side != Owner.Side)
             return;
-        power.Flash();
-        await PowerCmd.Remove(power);
-        await PowerCmd.Apply<FocusPower>(power.Owner, (-power.Sign * power.Amount),
-            power.Owner, null);
+        Flash();
+        await PowerCmd.Remove(this);
+        await PowerCmd.Apply<FocusPower>(Owner, -Sign * Amount,
+            Owner, null);
     }
 }
