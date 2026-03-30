@@ -1,24 +1,24 @@
 ﻿using BaseLib.Utils;
-using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.Combat;
+using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class TabascoSauce : EnergizedSpire2Relic
+public class DeadBattery : EnergizedSpire2Relic
 {
-    private const string HpReductionPercentKey = "HpReductionPercent";
-
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
-        new(HpReductionPercentKey, 50M),
+        new CardsVar(1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -31,21 +31,17 @@ public class TabascoSauce : EnergizedSpire2Relic
         return player != Owner ? amount : amount + DynamicVars.Energy.IntValue;
     }
 
-    // Rest Site calls ModifyHealAmount twice for some reason. We need to multiply by 2 (or divide by 50%) to counteract
-    // this.
-    public override decimal ModifyRestSiteHealAmount(Creature creature, decimal amount)
+    public override bool ShouldPlay(CardModel card, AutoPlayType autoPlayType)
     {
-        return amount / (DynamicVars[HpReductionPercentKey].BaseValue / 100M);
-    }
-
-    public override decimal ModifyHealAmount(Creature creature, decimal amount)
-    {
-        if (creature.Player != Owner)
+        if (card.Owner != Owner)
         {
-            return amount;
+            return true;
         }
 
-        Flash();
-        return amount * (DynamicVars[HpReductionPercentKey].BaseValue / 100M);
+        int powersPlayed = CombatManager.Instance.History.CardPlaysFinished.Count(e =>
+            e.HappenedThisTurn(card.CombatState) && e.CardPlay.Card.Type == CardType.Power &&
+            e.CardPlay.Card.Owner == card.Owner);
+
+        return card.Type != CardType.Power || powersPlayed < DynamicVars.Cards.BaseValue;
     }
 }

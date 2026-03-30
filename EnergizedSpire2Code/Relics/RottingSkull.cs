@@ -14,14 +14,13 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 [Pool(typeof(EventRelicPool))]
 public class RottingSkull : EnergizedSpire2Relic
 {
-    private const string _hpThresholdKey = "HpThreshold";
-    private bool _strengthApplied;
+    private const string HpThresholdKey = "HpThreshold";
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
-        new(_hpThresholdKey, 50M),
+        new(HpThresholdKey, 50M),
         new EnergyVar(1),
         new CardsVar(1)
     ];
@@ -55,7 +54,7 @@ public class RottingSkull : EnergizedSpire2Relic
     {
         Creature creature = Owner.Creature;
         bool flag = creature.CurrentHp >
-                    creature.MaxHp * (DynamicVars[_hpThresholdKey].BaseValue / 100M);
+                    creature.MaxHp * (DynamicVars[HpThresholdKey].BaseValue / 100M);
         Status = flag ? RelicStatus.Normal : RelicStatus.Active;
     }
 

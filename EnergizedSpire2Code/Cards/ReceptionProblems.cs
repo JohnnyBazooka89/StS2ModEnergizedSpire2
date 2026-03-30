@@ -21,6 +21,7 @@ public class ReceptionProblems() : EnergizedSpire2Card(-1, CardType.Curse, CardR
     ];
 
     public override int MaxUpgradeLevel => 0;
+    public override bool CanBeGeneratedByModifiers => false;
 
     public override IEnumerable<CardKeyword> CanonicalKeywords =>
     [
