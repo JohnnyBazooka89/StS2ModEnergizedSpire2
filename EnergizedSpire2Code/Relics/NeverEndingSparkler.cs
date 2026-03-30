@@ -44,7 +44,7 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
     public override Task AfterActEntered()
     {
         AddMarkedRooms(Owner.RunState.Map);
-        return base.AfterActEntered();
+        return Task.CompletedTask;
     }
 
     private ActMap AddMarkedRooms(ActMap map)
