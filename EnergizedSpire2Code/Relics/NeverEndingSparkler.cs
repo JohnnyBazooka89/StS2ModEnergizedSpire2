@@ -37,17 +37,17 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
 
     public override Task AfterObtained()
     {
-        AddMarkedRooms(Owner.RunState.Map);
+        ChangeQuestionMarkRoomsIntoEliteRooms(Owner.RunState.Map);
         return Task.CompletedTask;
     }
 
     public override Task AfterActEntered()
     {
-        AddMarkedRooms(Owner.RunState.Map);
+        ChangeQuestionMarkRoomsIntoEliteRooms(Owner.RunState.Map);
         return Task.CompletedTask;
     }
 
-    private ActMap AddMarkedRooms(ActMap map)
+    private void ChangeQuestionMarkRoomsIntoEliteRooms(ActMap map)
     {
         Rng rng = new Rng(Owner.RunState.Rng.Seed, 100 * Owner.RunState.ActFloor);
         List<MapPoint> questionRooms = map.GetAllMapPoints().Where(p => p.PointType == MapPointType.Unknown)
@@ -62,7 +62,5 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
         }
 
         NMapScreen.Instance?.RefreshAllPointVisuals();
-
-        return map;
     }
 }
