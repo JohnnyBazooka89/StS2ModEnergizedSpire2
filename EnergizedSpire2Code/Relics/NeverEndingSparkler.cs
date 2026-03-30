@@ -37,18 +37,19 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
 
     public override Task AfterObtained()
     {
-        ChangeQuestionMarkRoomsIntoEliteRooms(Owner.RunState.Map);
+        ChangeQuestionMarkRoomsIntoEliteRooms();
         return Task.CompletedTask;
     }
 
     public override Task AfterActEntered()
     {
-        ChangeQuestionMarkRoomsIntoEliteRooms(Owner.RunState.Map);
+        ChangeQuestionMarkRoomsIntoEliteRooms();
         return Task.CompletedTask;
     }
 
-    private void ChangeQuestionMarkRoomsIntoEliteRooms(ActMap map)
+    private void ChangeQuestionMarkRoomsIntoEliteRooms()
     {
+        ActMap map = Owner.RunState.Map;
         Rng rng = new Rng(Owner.RunState.Rng.Seed, 100 * Owner.RunState.ActFloor);
         List<MapPoint> questionRooms = map.GetAllMapPoints().Where(p => p.PointType == MapPointType.Unknown)
             .ToList();
