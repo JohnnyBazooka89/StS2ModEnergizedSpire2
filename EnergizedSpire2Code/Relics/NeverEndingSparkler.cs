@@ -26,8 +26,7 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
-        HoverTipFactory.ForEnergy(this),
-        HoverTipFactory.FromPower<ThornsPower>()
+        HoverTipFactory.ForEnergy(this)
     ];
 
     public override decimal ModifyMaxEnergy(Player player, decimal amount)
