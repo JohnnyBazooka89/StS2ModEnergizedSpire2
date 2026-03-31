@@ -20,7 +20,7 @@ public class SpiderWeb : EnergizedSpire2Relic
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
-        new EnergyVar(EnergyIncreaseCostKey, 1)
+        new(EnergyIncreaseCostKey, 1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -48,7 +48,7 @@ public class SpiderWeb : EnergizedSpire2Relic
 
         Flash();
         Owner.RunState.Rng.Shuffle.Shuffle(attacks);
-        attacks[0].EnergyCost.AddThisTurn((int)DynamicVars[EnergyIncreaseCostKey].BaseValue);
+        attacks[0].EnergyCost.AddThisTurn(DynamicVars[EnergyIncreaseCostKey].IntValue);
         return Task.CompletedTask;
     }
 }
