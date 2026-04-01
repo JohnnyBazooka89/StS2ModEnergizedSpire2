@@ -35,6 +35,9 @@ public class EnergizedSpire2Ancient : CustomAncientModel
 
                 AddGlobalOptions(listOfAncientOptions, null, null);
 
+                EnergizedSpire2MainFile.Logger.Info("There are " + listOfAncientOptions.Count +
+                                                    " ancient options total.");
+
                 return new OptionPools(MakePool(listOfAncientOptions.ToArray()));
             }
 
@@ -70,8 +73,10 @@ public class EnergizedSpire2Ancient : CustomAncientModel
 
             AddGlobalOptions(listOfAncientOptions, isSinglePlayer, actNumber);
 
-            EnergizedSpire2MainFile.Logger.Warn("characterId: " + characterId);
-            EnergizedSpire2MainFile.Logger.Warn("There are " + listOfAncientOptions.Count + " options");
+            EnergizedSpire2MainFile.Logger.Info("characterId: " + characterId);
+            EnergizedSpire2MainFile.Logger.Info("isSinglePlayer: " + isSinglePlayer);
+            EnergizedSpire2MainFile.Logger.Info("actNumber: " + actNumber);
+            EnergizedSpire2MainFile.Logger.Info("There are " + listOfAncientOptions.Count + " ancient options.");
 
             return new OptionPools(MakePool(listOfAncientOptions.ToArray()));
         }

@@ -11,8 +11,7 @@ public partial class EnergizedSpire2MainFile : Node
 {
     public const string ModId = "EnergizedSpire2"; //Used for resource filepath
 
-    public static Logger Logger { get; } =
-        new(ModId, LogType.Generic);
+    public static Logger Logger { get; } = new(ModId, LogType.Generic);
 
     public static void Initialize()
     {

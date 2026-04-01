@@ -48,7 +48,7 @@
   "ENERGIZEDSPIRE2-RED_ROSE.description": "Gain {Energy:energyIcons()} at the start of your turn. ALL enemies start combat with [blue]{ThornsPower}[/blue] [gold]Thorns[/gold].",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "There is no rose without a thorn.",
   "ENERGIZEDSPIRE2-SPIDER_WEB.title": "Spider Web",
-  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "Gain {Energy:energyIcons()} at the start of your turn. Each turn, one random Attack in [gold]Hand[/hand] costs {EnergyCostIncrease:energyIcons()} more.",
+  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "Gain {Energy:energyIcons()} at the start of your turn. Each turn, one random Attack in [gold]Hand[/gold] costs {EnergyCostIncrease:energyIcons()} more.",
   "ENERGIZEDSPIRE2-SPIDER_WEB.flavor": "Use it to catch your enemies, not to catch yourself...",
   "ENERGIZEDSPIRE2-STICKY_HAND.title": "Sticky Hand",
   "ENERGIZEDSPIRE2-STICKY_HAND.description": "Gain {Energy:energyIcons()} at the start of your turn. Whenever you would take a card in a card reward, you take ALL the offered cards instead.",
