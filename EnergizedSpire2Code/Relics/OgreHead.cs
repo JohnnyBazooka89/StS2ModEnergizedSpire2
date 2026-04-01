@@ -13,7 +13,7 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 [Pool(typeof(EventRelicPool))]
 public class OgreHead : EnergizedSpire2Relic
 {
-    private const string MisdirectionPercentKey = "MisdirectionPercentKey";
+    private const string MisdirectionPercentKey = "MisdirectionPercent";
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>

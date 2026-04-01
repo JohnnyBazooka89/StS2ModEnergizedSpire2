@@ -13,14 +13,14 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 [Pool(typeof(EventRelicPool))]
 public class SpiderWeb : EnergizedSpire2Relic
 {
-    private const string EnergyIncreaseCostKey = "EnergyIncreaseCost";
+    private const string EnergyCostIncreaseKey = "EnergyCostIncrease";
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
-        new(EnergyIncreaseCostKey, 1)
+        new EnergyVar(EnergyCostIncreaseKey, 1)
     ];
 
     protected override IEnumerable<IHoverTip> ExtraHoverTips =>
@@ -48,7 +48,7 @@ public class SpiderWeb : EnergizedSpire2Relic
 
         Flash();
         Owner.RunState.Rng.Shuffle.Shuffle(attacks);
-        attacks[0].EnergyCost.AddThisTurn(DynamicVars[EnergyIncreaseCostKey].IntValue);
+        attacks[0].EnergyCost.AddThisTurn(DynamicVars[EnergyCostIncreaseKey].IntValue);
         return Task.CompletedTask;
     }
 }

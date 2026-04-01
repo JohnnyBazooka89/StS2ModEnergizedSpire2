@@ -37,7 +37,7 @@ public static class CardReward_OnSelect_PostfixPatch
             return;
 
 
-        Player? player = LocalContext.GetMe(cards[0].Card.RunState);
+        Player? player = LocalContext.GetMe(cardReward.Player.RunState);
         StickyHand? stickyHand = player?.GetRelic<StickyHand>();
         if (stickyHand == null)
         {
@@ -56,7 +56,8 @@ public static class CardReward_OnSelect_PostfixPatch
 
             cards.RemoveAll(c => c.Card == addedCard);
 
-            MainFile.Logger.Info($"Obtained {addedCard.Id} from card reward (extra card from Sticky Hand)");
+            EnergizedSpire2MainFile.Logger.Info(
+                $"Obtained {addedCard.Id} from card reward (extra card from Sticky Hand)");
             RunManager.Instance.RewardSynchronizer.SyncLocalObtainedCard(addedCard);
         }
     }
