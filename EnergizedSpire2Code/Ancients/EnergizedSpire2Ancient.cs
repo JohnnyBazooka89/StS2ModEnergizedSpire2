@@ -1,4 +1,5 @@
 ﻿using BaseLib.Abstracts;
+using BaseLib.Extensions;
 using BaseLib.Utils;
 using EnergizedSpire2.EnergizedSpire2Code.Relics;
 using MegaCrit.Sts2.Core.Entities.Cards;
@@ -23,16 +24,16 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         {
             List<AncientOption> listOfAncientOptions = [];
 
-            // If Owner is null -> return ALL options (single player mode is assumed to be true to show all relics in library)
+            // If Owner is null -> return ALL options
             if (Owner == null)
             {
                 AddIroncladOptions(listOfAncientOptions);
                 AddSilentOptions(listOfAncientOptions);
                 AddDefectOptions(listOfAncientOptions);
                 AddRegentOptions(listOfAncientOptions);
-                AddNecrobinderOptions(listOfAncientOptions, true);
+                AddNecrobinderOptions(listOfAncientOptions, null);
 
-                AddGlobalOptions(listOfAncientOptions, true);
+                AddGlobalOptions(listOfAncientOptions, null, null);
 
                 return new OptionPools(MakePool(listOfAncientOptions.ToArray()));
             }
@@ -40,6 +41,7 @@ public class EnergizedSpire2Ancient : CustomAncientModel
             var characterId = Owner.Character.Id;
             bool isSinglePlayer = Owner.RunState.CardMultiplayerConstraint ==
                                   CardMultiplayerConstraint.SingleplayerOnly;
+            int actNumber = Owner.RunState.Act.ActNumber();
 
             if (characterId == ModelDb.GetId<Ironclad>())
             {
@@ -66,7 +68,7 @@ public class EnergizedSpire2Ancient : CustomAncientModel
                 AddNecrobinderOptions(listOfAncientOptions, isSinglePlayer);
             }
 
-            AddGlobalOptions(listOfAncientOptions, isSinglePlayer);
+            AddGlobalOptions(listOfAncientOptions, isSinglePlayer, actNumber);
 
             EnergizedSpire2MainFile.Logger.Warn("characterId: " + characterId);
             EnergizedSpire2MainFile.Logger.Warn("There are " + listOfAncientOptions.Count + " options");
@@ -104,24 +106,28 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         options.Add(AncientOption<RoyalCoffers>());
     }
 
-    private void AddNecrobinderOptions(List<AncientOption> options, bool isSinglePlayer)
+    private void AddNecrobinderOptions(List<AncientOption> options, bool? isSinglePlayer)
     {
         options.Add(AncientOption<NecroticScythe>());
-        if (isSinglePlayer)
+        if (isSinglePlayer is null or true)
         {
             options.Add(AncientOption<BrassCoil>());
         }
     }
 
-    private void AddGlobalOptions(List<AncientOption> options, bool isSinglePlayer)
+    private void AddGlobalOptions(List<AncientOption> options, bool? isSinglePlayer, int? actNumber)
     {
-        options.Add(AncientOption<CursedPentagram>());
+        if (actNumber is null or 2)
+        {
+            options.Add(AncientOption<CursedPentagram>());
+        }
+
         options.Add(AncientOption<DeadBattery>());
         options.Add(AncientOption<OgreHead>());
         options.Add(AncientOption<SpiderWeb>());
         options.Add(AncientOption<StickyHand>());
 
-        if (isSinglePlayer)
+        if (isSinglePlayer is null or true)
         {
             options.Add(AncientOption<MagnifyingGlass>());
             options.Add(AncientOption<NeverEndingSparkler>());

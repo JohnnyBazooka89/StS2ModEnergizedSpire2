@@ -62,7 +62,7 @@
         <!-- Diasble architecture mismatch warning; mods are ideally built for all platforms (MSIL)
              while your local StS2 version will be for your specific platform. -->
         <NoWarn>$(NoWarn);MSB3270</NoWarn>
-        <BaseLibVersion>0.2.3</BaseLibVersion>
+        <BaseLibVersion>*</BaseLibVersion>
     </PropertyGroup>
 
     <ItemGroup Condition="Exists('$(Sts2DataDir)')">
