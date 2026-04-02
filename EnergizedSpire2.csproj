@@ -103,7 +103,6 @@
     <ItemGroup>
         <Folder Include="EnergizedSpire2\images\card_portraits\big\"/>
         <Folder Include="EnergizedSpire2\images\powers\big\"/>
-        <Folder Include="EnergizedSpire2\images\relics\big\"/>
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">

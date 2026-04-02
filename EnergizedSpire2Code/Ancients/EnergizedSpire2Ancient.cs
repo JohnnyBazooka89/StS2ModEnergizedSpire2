@@ -128,6 +128,8 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         }
 
         options.Add(AncientOption<DeadBattery>());
+        options.Add(AncientOption<EnergizedCoin>());
+        options.Add(AncientOption<HugeHouse>());
         options.Add(AncientOption<OgreHead>());
         options.Add(AncientOption<SpiderWeb>());
         options.Add(AncientOption<StickyHand>());

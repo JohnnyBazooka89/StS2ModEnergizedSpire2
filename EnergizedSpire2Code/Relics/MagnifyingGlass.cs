@@ -6,6 +6,7 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Nodes.Rooms;
 using MegaCrit.Sts2.Core.Rooms;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
@@ -55,6 +56,7 @@ public class MagnifyingGlass : EnergizedSpire2Relic
 
     private Task IncreaseMaxHpForCreature(Creature creature)
     {
+        NCombatRoom.Instance?.GetCreatureNode(creature)?.ScaleTo(1.2f, 1.0f);
         return CreatureCmd.SetMaxAndCurrentHp(creature,
             creature.MaxHp * (1 + DynamicVars[MoreHpPercentKey].BaseValue / 100M));
     }
