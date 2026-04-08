@@ -12,7 +12,7 @@
   "ENERGIZEDSPIRE2-POGO_STICK.description": "在回合开始时获得{Energy:energyIcons()}。每当你触发[gold]奇巧[/gold]时，将[blue]{Cards}[/blue]张[red]晕眩[/red]洗入你的[gold]抽牌堆[/gold]。",
   "ENERGIZEDSPIRE2-POGO_STICK.flavor": "蹦，蹦，蹦...",
   "ENERGIZEDSPIRE2-OLD_T_V.title": "老旧电视",
-  "ENERGIZEDSPIRE2-OLD_T_V.description": "在回合开始时获得{Energy:energyIcons()}。战斗开始时将[blue]{Cards}[/blue]张[red]接收问题[/red]洗入你的[gold]抽牌堆[/gold]。",
+  "ENERGIZEDSPIRE2-OLD_T_V.description": "在回合开始时获得{Energy:energyIcons()}。战斗开始时将[blue]{Cards}[/blue]张[red]信号丢失[/red]洗入你的[gold]抽牌堆[/gold]。",
   "ENERGIZEDSPIRE2-OLD_T_V.flavor": "老而无用，弃之可惜。",
   "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.title": "侵略协议",
   "ENERGIZEDSPIRE2-AGGRESSION_PROTOCOL.description": "在回合开始时获得{Energy:energyIcons()}。当你手牌中有[gold]攻击[/gold]牌时，每回合你打出的第一张[gold]技能[/gold]或[gold]能力[/gold]牌费用增加{EnergyCostIncrease:energyIcons()}。",
