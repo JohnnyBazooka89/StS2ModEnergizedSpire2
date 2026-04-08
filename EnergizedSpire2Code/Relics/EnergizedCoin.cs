@@ -120,7 +120,7 @@ public class EnergizedCoin : EnergizedSpire2Relic
         EnergizedCoinEffect randomEffect = values[Owner.RunState.Rng.Niche.NextInt(0, values.Length)];
         CurrentEffect = randomEffect;
         RelicIconChanged();
-        RelicUtils.ReloadAllIcons();
+        RelicUtils.ReloadRelicIcon(Id);
         Flash();
         return Task.CompletedTask;
     }

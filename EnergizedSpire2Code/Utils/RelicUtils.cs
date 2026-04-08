@@ -1,4 +1,5 @@
 ﻿using HarmonyLib;
+using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Nodes;
 using MegaCrit.Sts2.Core.Nodes.Relics;
 
@@ -6,12 +7,15 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Utils;
 
 public class RelicUtils
 {
-    public static void ReloadAllIcons()
+    public static void ReloadRelicIcon(ModelId relicId)
     {
         foreach (NRelicInventoryHolder nRelicInventoryHolder in NRun.Instance?.GlobalUi.RelicInventory.RelicNodes)
         {
             var relic = nRelicInventoryHolder.Relic;
-            Traverse.Create(relic).Method("Reload").GetValue();
+            if (relic.Model.Id == relicId)
+            {
+                Traverse.Create(relic).Method("Reload").GetValue();
+            }
         }
     }
 }

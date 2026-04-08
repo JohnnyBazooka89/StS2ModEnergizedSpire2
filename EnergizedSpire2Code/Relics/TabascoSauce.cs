@@ -1,4 +1,5 @@
-﻿using BaseLib.Utils;
+﻿using BaseLib.Hooks;
+using BaseLib.Utils;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
@@ -9,7 +10,7 @@ using MegaCrit.Sts2.Core.Models.RelicPools;
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class TabascoSauce : EnergizedSpire2Relic
+public class TabascoSauce : EnergizedSpire2Relic, IHealAmountModifier
 {
     private const string HpReductionPercentKey = "HpReductionPercent";
 
@@ -26,26 +27,19 @@ public class TabascoSauce : EnergizedSpire2Relic
         HoverTipFactory.ForEnergy(this)
     ];
 
-    public override decimal ModifyMaxEnergy(Player player, decimal amount)
-    {
-        return player != Owner ? amount : amount + DynamicVars.Energy.IntValue;
-    }
-
-    // Rest Site calls ModifyHealAmount twice for some reason. We need to multiply by 2 (or divide by 50%) to counteract
-    // this.
-    public override decimal ModifyRestSiteHealAmount(Creature creature, decimal amount)
-    {
-        return amount / (DynamicVars[HpReductionPercentKey].BaseValue / 100M);
-    }
-
-    public override decimal ModifyHealAmount(Creature creature, decimal amount)
+    public Decimal ModifyHealMultiplicative(Creature creature, Decimal amount)
     {
         if (creature.Player != Owner)
         {
-            return amount;
+            return 1;
         }
 
         Flash();
-        return amount * (DynamicVars[HpReductionPercentKey].BaseValue / 100M);
+        return 1 - DynamicVars[HpReductionPercentKey].BaseValue / 100M;
+    }
+
+    public override decimal ModifyMaxEnergy(Player player, decimal amount)
+    {
+        return player != Owner ? amount : amount + DynamicVars.Energy.IntValue;
     }
 }

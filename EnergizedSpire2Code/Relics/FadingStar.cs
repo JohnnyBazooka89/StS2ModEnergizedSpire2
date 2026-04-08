@@ -10,7 +10,7 @@ using MegaCrit.Sts2.Core.Models.RelicPools;
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 
 [Pool(typeof(EventRelicPool))]
-public class FadingConstellation : EnergizedSpire2Relic
+public class FadingStar : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

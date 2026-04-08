@@ -13,6 +13,11 @@ public static class StringExtensions
         return Path.Join(EnergizedSpire2MainFile.ModId, "images", "card_portraits", path);
     }
 
+    public static string BetaCardImagePath(this string path)
+    {
+        return Path.Join(EnergizedSpire2MainFile.ModId, "images", "card_portraits", "beta", path);
+    }
+    
     public static string BigCardImagePath(this string path)
     {
         return Path.Join(EnergizedSpire2MainFile.ModId, "images", "card_portraits", "big", path);

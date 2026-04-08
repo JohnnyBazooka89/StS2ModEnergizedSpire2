@@ -12,11 +12,11 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Ancients;
 public class EnergizedSpire2Ancient : CustomAncientModel
 {
     public override string CustomScenePath => "res://EnergizedSpire2/images/ancients/darv.tscn";
-    public override string CustomMapIconPath => "res://EnergizedSpire2/images/card_portraits/big/card.png";
-    public override string CustomMapIconOutlinePath => "res://EnergizedSpire2/images/card_portraits/big/card.png";
-    public override string CustomRunHistoryIconPath => "res://EnergizedSpire2/images/card_portraits/big/card.png";
-
-    public override string CustomRunHistoryIconOutlinePath => CustomRunHistoryIconPath;
+    public override string CustomMapIconPath => "res://EnergizedSpire2/images/ancients/map_icon.png";
+    public override string CustomMapIconOutlinePath => "res://EnergizedSpire2/images/ancients/map_icon_outline.png";
+    public override string CustomRunHistoryIconPath => "res://EnergizedSpire2/images/ancients/run_history_icon.png";
+    public override string CustomRunHistoryIconOutlinePath =>
+        "res://EnergizedSpire2/images/ancients/run_history_icon_outline.png";
 
     protected override OptionPools MakeOptionPools
     {
@@ -36,7 +36,7 @@ public class EnergizedSpire2Ancient : CustomAncientModel
                 AddGlobalOptions(listOfAncientOptions, null, null);
 
                 EnergizedSpire2MainFile.Logger.Info("There are " + listOfAncientOptions.Count +
-                                                    " ancient options total.");
+                                                    " Ancient options total.");
 
                 return new OptionPools(MakePool(listOfAncientOptions.ToArray()));
             }
@@ -76,7 +76,7 @@ public class EnergizedSpire2Ancient : CustomAncientModel
             EnergizedSpire2MainFile.Logger.Info("characterId: " + characterId);
             EnergizedSpire2MainFile.Logger.Info("isSinglePlayer: " + isSinglePlayer);
             EnergizedSpire2MainFile.Logger.Info("actNumber: " + actNumber);
-            EnergizedSpire2MainFile.Logger.Info("There are " + listOfAncientOptions.Count + " ancient options.");
+            EnergizedSpire2MainFile.Logger.Info("There are " + listOfAncientOptions.Count + " Ancient options.");
 
             return new OptionPools(MakePool(listOfAncientOptions.ToArray()));
         }
@@ -107,7 +107,7 @@ public class EnergizedSpire2Ancient : CustomAncientModel
 
     private void AddRegentOptions(List<AncientOption> options)
     {
-        options.Add(AncientOption<FadingConstellation>());
+        options.Add(AncientOption<FadingStar>());
         options.Add(AncientOption<RoyalCoffers>());
     }
 
@@ -125,10 +125,10 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         if (actNumber is null or 2)
         {
             options.Add(AncientOption<CursedPentagram>());
+            options.Add(AncientOption<EnergizedCoin>());
         }
 
         options.Add(AncientOption<DeadBattery>());
-        options.Add(AncientOption<EnergizedCoin>());
         options.Add(AncientOption<HugeHouse>());
         options.Add(AncientOption<OgreHead>());
         options.Add(AncientOption<SpiderWeb>());

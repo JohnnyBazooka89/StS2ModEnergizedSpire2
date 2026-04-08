@@ -14,7 +14,11 @@ public abstract class EnergizedSpire2Card(int cost, CardType type, CardRarity ra
     //Full art: 606x852
     public override string CustomPortraitPath
     {
-        get => PortraitPath;
+        get
+        {
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
+            return ResourceLoader.Exists(path) ? path : "card.png".BigCardImagePath();
+        }
     }
 
     //Smaller variants of card images for efficiency:
@@ -26,8 +30,8 @@ public abstract class EnergizedSpire2Card(int cost, CardType type, CardRarity ra
     {
         get
         {
-            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigCardImagePath();
-            return ResourceLoader.Exists(path) ? path : "card.png".BigCardImagePath();
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+            return ResourceLoader.Exists(path) ? path : "card.png".CardImagePath();
         }
     }
 
@@ -35,7 +39,7 @@ public abstract class EnergizedSpire2Card(int cost, CardType type, CardRarity ra
     {
         get
         {
-            var path = $"beta/{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".CardImagePath();
+            var path = $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BetaCardImagePath();
             return ResourceLoader.Exists(path) ? path : PortraitPath;
         }
     }
