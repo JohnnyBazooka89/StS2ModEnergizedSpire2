@@ -51,7 +51,7 @@
   "ENERGIZEDSPIRE2-MAGNIFYING_GLASS.description": "在回合开始时获得{Energy:energyIcons()}。敌人的生命值提高[blue]{MoreHpPercent}%[/blue]。",
   "ENERGIZEDSPIRE2-MAGNIFYING_GLASS.flavor": "大者难倒。",
   "ENERGIZEDSPIRE2-NEVER_ENDING_SPARKLER.title": "无尽烟花棒",
-  "ENERGIZEDSPIRE2-NEVER_ENDING_SPARKLER.description": "在回合开始时获得{Energy:energyIcons()}。[blue]{ChancePercent}%[/blue]的问号房间会变为精英房间。",
+  "ENERGIZEDSPIRE2-NEVER_ENDING_SPARKLER.description": "在回合开始时获得{Energy:energyIcons()}。[blue]{ChancePercent}%[/blue]的？房间会变为精英房间。",
   "ENERGIZEDSPIRE2-NEVER_ENDING_SPARKLER.flavor": "迸射出的是欢乐。",
   "ENERGIZEDSPIRE2-OGRE_HEAD.title": "食人魔头颅",
   "ENERGIZEDSPIRE2-OGRE_HEAD.description": "在回合开始时获得{Energy:energyIcons()}。每当你打出以敌人为目标的牌时，有[blue]{MisdirectionPercent}%[/blue]几率改为指定另一名敌人。",
