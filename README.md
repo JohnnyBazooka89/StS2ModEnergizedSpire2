@@ -7,7 +7,7 @@ This mod introduces a new Ancient, **Energized Darv**, who can appear in Act 2 o
 Each base-game character has two character-specific relics, and there are 10 shared relics. This means that base-game characters can choose from a pool of 12 relics, while modded characters have a pool of 10 options.
 
 ## 🌐 Localization
-The mod is currently only available in English. Chinese translation would be appreciated.
+The mod is available in English and in Simplified Chinese (thanks to OLC and Mantodea).
 
 ## 📦 Dependencies
 - BaseLib version 0.2.8 or newer.
