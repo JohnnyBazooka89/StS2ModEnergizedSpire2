@@ -6,8 +6,6 @@ This mod introduces a new Ancient, Energized Darv, who can appear in Act 2 or Ac
 
 Each base-game character has two character-specific relics, and there are 10 shared relics. This means that base-game characters can choose from a pool of 12 relics, while modded characters have a pool of 10 options.
 
-The mod is currently only available in English. Chinese translation would be appreciated.
-
 ## 🌐 Localization
 The mod is currently only available in English. Chinese translation would be appreciated.
 
@@ -15,7 +13,7 @@ The mod is currently only available in English. Chinese translation would be app
 - BaseLib version 0.2.8 or newer.
 
 ## ⚙️ Installation
-1. Go to the Releases page on GitHub (link) and download the latest version.
+1. Go to the [Releases](https://github.com/JohnnyBazooka89/StS2ModEnergizedSpire2/releases) page on GitHub and download the latest version.
 2. Extract the ZIP file.
 3. Navigate to your *Slay the Spire 2* installation folder: {SteamLibrary}\steamapps\common\Slay The Spire 2\
 4. If the mods folder does not exist, create one.
