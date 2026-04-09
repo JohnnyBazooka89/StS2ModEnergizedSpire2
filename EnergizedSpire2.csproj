@@ -100,11 +100,6 @@
         <None Include="EnergizedSpire2/**"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Content Include="Screenshots\20260409222357_1.jpg" />
-        <Content Include="Screenshots\Compendium.jpg"/>
-    </ItemGroup>
-
     <Target Name="CheckDependencyPaths">
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"
@@ -118,7 +113,7 @@
         <Message Text="Copying .dll and manifest to mods folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
-        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+        <!--<Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />-->
         <Message Text="Copying BaseLib to mods folder." Importance="high"/>
         <ItemGroup>
             <BaseLibFiles Include="
