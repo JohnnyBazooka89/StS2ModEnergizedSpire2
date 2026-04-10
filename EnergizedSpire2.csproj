@@ -115,8 +115,8 @@
         <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Message Text="Copying .dll and manifest to mods/release folder." Importance="high"/>
-        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)release/$(MSBuildProjectName)/"/>
-        <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)release/$(MSBuildProjectName)/"/>
+        <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)../release/$(MSBuildProjectName)/"/>
+        <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)../release/$(MSBuildProjectName)/"/>
         <Message Text="Copying BaseLib to mods folder." Importance="high"/>
         <ItemGroup>
             <BaseLibFiles Include="
@@ -133,7 +133,7 @@
         <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)release/$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;"
+        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)../release/$(MSBuildProjectName)/$(MSBuildProjectName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
     </Target>
