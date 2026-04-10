@@ -47,4 +47,9 @@ public static class StringExtensions
     {
         return Path.Join(EnergizedSpire2MainFile.ModId, "images", "relics", "big", path);
     }
+
+    public static string AncientImagePath(this string path)
+    {
+        return Path.Join(EnergizedSpire2MainFile.ModId, "images", "ancients", path);
+    }
 }

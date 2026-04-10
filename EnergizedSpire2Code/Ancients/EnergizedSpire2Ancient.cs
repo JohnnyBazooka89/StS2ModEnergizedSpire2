@@ -1,6 +1,7 @@
 ﻿using BaseLib.Abstracts;
 using BaseLib.Extensions;
 using BaseLib.Utils;
+using EnergizedSpire2.EnergizedSpire2Code.Extensions;
 using EnergizedSpire2.EnergizedSpire2Code.Relics;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
@@ -11,12 +12,11 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Ancients;
 [Pool(typeof(AncientEventModel))]
 public class EnergizedSpire2Ancient : CustomAncientModel
 {
-    public override string CustomScenePath => "res://EnergizedSpire2/images/ancients/darv.tscn";
-    public override string CustomMapIconPath => "res://EnergizedSpire2/images/ancients/map_icon.png";
-    public override string CustomMapIconOutlinePath => "res://EnergizedSpire2/images/ancients/map_icon_outline.png";
-    public override string CustomRunHistoryIconPath => "res://EnergizedSpire2/images/ancients/run_history_icon.png";
-    public override string CustomRunHistoryIconOutlinePath =>
-        "res://EnergizedSpire2/images/ancients/run_history_icon_outline.png";
+    public override string CustomScenePath => "darv.tscn".AncientImagePath();
+    public override string CustomMapIconPath => "map_icon.png".AncientImagePath();
+    public override string CustomMapIconOutlinePath => "map_icon_outline.png".AncientImagePath();
+    public override string CustomRunHistoryIconPath => "run_history_icon.png".AncientImagePath();
+    public override string CustomRunHistoryIconOutlinePath => "run_history_icon_outline.png".AncientImagePath();
 
     protected override OptionPools MakeOptionPools
     {
