@@ -1,0 +1,4 @@
+{
+  "ENERGIZEDSPIRE2-RECEPTION_PROBLEMS.title": "연결 불량",
+  "ENERGIZEDSPIRE2-RECEPTION_PROBLEMS.description": "이 카드를 뽑을 때마다, 이번 턴에 [gold]밀집[/gold]을 {FocusPower:diff()} 잃습니다."
+}
