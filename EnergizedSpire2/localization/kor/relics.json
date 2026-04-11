@@ -60,7 +60,7 @@
   "ENERGIZEDSPIRE2-RED_ROSE.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 모든 적이 [gold]가시[/gold]를 [blue]{ThornsPower}[/blue] 가지고 전투를 시작합니다.",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "가시 없는 장미는 없다.",
   "ENERGIZEDSPIRE2-SPIDER_WEB.title": "거미줄",
-  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 매 턴, [gold]손[/gold]에 있는 공격 카드가 이번 턴 동안 비용이 {EnergyCostIncrease:energyIcons()} 증가합니다.",
+  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 매 턴, [gold]손[/gold]에 있는 무작위 공격 카드 1장의 비용이 이번 턴 동안 {EnergyCostIncrease:energyIcons()} 증가합니다.",
   "ENERGIZEDSPIRE2-SPIDER_WEB.flavor": "적을 잡는 데 쓰고, 스스로 걸리지 마라...",
   "ENERGIZEDSPIRE2-STICKY_HAND.title": "끈끈이 손바닥",
   "ENERGIZEDSPIRE2-STICKY_HAND.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 카드 보상에서 카드를 얻을 때마다, 대신 모든 카드를 얻습니다.",
