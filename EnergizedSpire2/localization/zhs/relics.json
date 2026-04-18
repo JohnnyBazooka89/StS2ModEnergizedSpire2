@@ -30,7 +30,7 @@
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.description": "每回合你第一次打出费用为{EnergyThreshold:energyIcons()}或更高的牌时，获得{Energy:energyIcons()}。",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.flavor": "重挥变得轻巧。",
   "ENERGIZEDSPIRE2-CURSED_PENTAGRAM.title": "诅咒五芒星",
-  "ENERGIZEDSPIRE2-CURSED_PENTAGRAM.description": "在回合开始时获得{Energy:energyIcons()}。之后你每将[blue]{Cards}[/blue]张非[red]诅咒[/red]牌加入你的[gold]牌组[/gold]时，获得一张[red]诅咒[/red]。",
+  "ENERGIZEDSPIRE2-CURSED_PENTAGRAM.description": "在回合开始时获得{Energy:energyIcons()}。之后你每将[blue]{Cards}[/blue]张非[red]诅咒[/red]牌加入你的[gold]牌组[/gold]时，获得一张随机的[red]诅咒[/red]。",
   "ENERGIZEDSPIRE2-CURSED_PENTAGRAM.flavor": "不要跟你不懂的力量胡搅蛮缠......",
   "ENERGIZEDSPIRE2-DEAD_BATTERY.title": "没电的电池",
   "ENERGIZEDSPIRE2-DEAD_BATTERY.description": "在回合开始时获得{Energy:energyIcons()}。每回合你最多只能打出[blue]{Cards}[/blue]张[gold]能力[/gold]牌。",
