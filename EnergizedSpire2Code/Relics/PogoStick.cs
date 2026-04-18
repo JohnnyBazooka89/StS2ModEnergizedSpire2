@@ -1,14 +1,16 @@
 ﻿using BaseLib.Utils;
+using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
-using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Cards;
 using MegaCrit.Sts2.Core.Models.RelicPools;
+using MegaCrit.Sts2.Core.Rooms;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 
@@ -16,6 +18,8 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 public class PogoStick : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
+
+    private bool UsedThisTurn { get; set; }
 
     protected override IEnumerable<DynamicVar> CanonicalVars =>
     [
@@ -35,10 +39,9 @@ public class PogoStick : EnergizedSpire2Relic
         return player != Owner ? amount : amount + DynamicVars.Energy.IntValue;
     }
 
-    public override async Task BeforeCardAutoPlayed(CardModel card, Creature? target, AutoPlayType type)
+    public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (type != AutoPlayType.SlyDiscard || card.Owner != Owner ||
-            Owner.Creature.Side != Owner.Creature.CombatState.CurrentSide)
+        if (UsedThisTurn || card.Owner != Owner || Owner.Creature.Side != Owner.Creature.CombatState.CurrentSide)
             return;
         Flash();
 
@@ -50,5 +53,24 @@ public class PogoStick : EnergizedSpire2Relic
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,
             PileType.Draw, true, CardPilePosition.Random));
+
+        UsedThisTurn = true;
+    }
+
+    public override Task BeforeSideTurnStart(
+        PlayerChoiceContext choiceContext,
+        CombatSide side,
+        CombatState combatState)
+    {
+        if (side != Owner.Creature.Side)
+            return Task.CompletedTask;
+        UsedThisTurn = false;
+        return Task.CompletedTask;
+    }
+
+    public override Task AfterCombatEnd(CombatRoom _)
+    {
+        UsedThisTurn = false;
+        return Task.CompletedTask;
     }
 }

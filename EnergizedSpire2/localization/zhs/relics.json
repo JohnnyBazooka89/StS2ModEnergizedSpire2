@@ -9,7 +9,7 @@
   "ENERGIZEDSPIRE2-HIGH_HEELS.description": "在回合开始时获得{Energy:energyIcons()}。战斗开始时失去[blue]{DexterityPower}[/blue]点[gold]敏捷[/gold]，并将[blue]{Cards}[/blue]张[red]笨拙[/red]洗入你的[gold]抽牌堆[/gold]。",
   "ENERGIZEDSPIRE2-HIGH_HEELS.flavor": "优雅，但是战斗中不是很舒服。",
   "ENERGIZEDSPIRE2-POGO_STICK.title": "蹦蹦跷",
-  "ENERGIZEDSPIRE2-POGO_STICK.description": "在回合开始时获得{Energy:energyIcons()}。每当你触发[gold]奇巧[/gold]时，将[blue]{Cards}[/blue]张[red]晕眩[/red]洗入你的[gold]抽牌堆[/gold]。",
+  "ENERGIZEDSPIRE2-POGO_STICK.description": "在回合开始时获得{Energy:energyIcons()}。每回合第一次弃牌时，将[blue]{Cards}[/blue]张[red]晕眩[/red]洗入你的[gold]抽牌堆[/gold]。",
   "ENERGIZEDSPIRE2-POGO_STICK.flavor": "蹦，蹦，蹦...",
   "ENERGIZEDSPIRE2-OLD_T_V.title": "老旧电视",
   "ENERGIZEDSPIRE2-OLD_T_V.description": "在回合开始时获得{Energy:energyIcons()}。战斗开始时将[blue]{Cards}[/blue]张[red]信号丢失[/red]洗入你的[gold]抽牌堆[/gold]。",

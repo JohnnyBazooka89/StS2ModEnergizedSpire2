@@ -9,7 +9,7 @@
   "ENERGIZEDSPIRE2-HIGH_HEELS.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 매 전투 시작 시, [gold]민첩[/gold]을 [blue]{DexterityPower}[/blue] 잃고 [gold]뽑을 카드 더미[/gold]에 [red]서투름[/red]을 [blue]{Cards}[/blue]장 섞어 넣습니다.",
   "ENERGIZEDSPIRE2-HIGH_HEELS.flavor": "우아하지만, 전투에는 그리 편하지는 않다.",
   "ENERGIZEDSPIRE2-POGO_STICK.title": "스카이콩콩",
-  "ENERGIZEDSPIRE2-POGO_STICK.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. [gold]교활[/gold]을 발동할 때마다, [gold]뽑을 카드 더미[/gold]에 [red]어지러움[/red]을 [blue]{Cards}[/blue]장 섞어 넣습니다.",
+  "ENERGIZEDSPIRE2-POGO_STICK.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 매 턴 처음으로 카드를 버릴 때마다, [gold]뽑을 카드 더미[/gold]에 [red]어지러움[/red]을 [blue]{Cards}[/blue]장 섞어 넣습니다.",
   "ENERGIZEDSPIRE2-POGO_STICK.flavor": "뛰용, 뛰용, 뛰용...",
   "ENERGIZEDSPIRE2-OLD_T_V.title": "낡은 TV",
   "ENERGIZEDSPIRE2-OLD_T_V.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 매 전투 시작 시, [gold]뽑을 카드 더미[/gold]에 [red]연결 불량[/red]을 [blue]{Cards}[/blue]장 섞어 넣습니다.",

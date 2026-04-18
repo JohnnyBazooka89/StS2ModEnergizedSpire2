@@ -9,7 +9,7 @@
   "ENERGIZEDSPIRE2-HIGH_HEELS.description": "Gain {Energy:energyIcons()} at the start of each turn. At the start of combat, lose [blue]{DexterityPower}[/blue] [gold]Dexterity[/gold] and shuffle [blue]{Cards}[/blue] [red]Clumsy[/red] into your [gold]Draw Pile[/gold].",
   "ENERGIZEDSPIRE2-HIGH_HEELS.flavor": "Elegant, but not very comfortable for combat.",
   "ENERGIZEDSPIRE2-POGO_STICK.title": "Pogo Stick",
-  "ENERGIZEDSPIRE2-POGO_STICK.description": "Gain {Energy:energyIcons()} at the start of each turn. Whenever you trigger [gold]Sly[/gold], shuffle [blue]{Cards}[/blue] [red]Dazed[/red] into your [gold]Draw Pile[/gold].",
+  "ENERGIZEDSPIRE2-POGO_STICK.description": "Gain {Energy:energyIcons()} at the start of each turn. The first time each turn you discard a card, shuffle [blue]{Cards}[/blue] [red]Dazed[/red] into your [gold]Draw Pile[/gold].",
   "ENERGIZEDSPIRE2-POGO_STICK.flavor": "Boing, boing, boing...",
   "ENERGIZEDSPIRE2-OLD_T_V.title": "Old TV",
   "ENERGIZEDSPIRE2-OLD_T_V.description": "Gain {Energy:energyIcons()} at the start of each turn. At the start of combat, shuffle [blue]{Cards}[/blue] [red]Reception Problems[/red] into your [gold]Draw Pile[/gold].",
