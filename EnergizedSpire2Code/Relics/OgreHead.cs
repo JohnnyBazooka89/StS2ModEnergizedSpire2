@@ -36,7 +36,7 @@ public class OgreHead : EnergizedSpire2Relic
     {
         IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
-        if (targets.Count() < 2)
+        if (cardPlay.Card.Owner != Owner || cardPlay.Target == null || targets.Count() < 2)
         {
             return Task.CompletedTask;
         }
