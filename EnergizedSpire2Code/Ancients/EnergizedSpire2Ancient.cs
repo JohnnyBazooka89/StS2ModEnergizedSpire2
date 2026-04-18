@@ -128,7 +128,11 @@ public class EnergizedSpire2Ancient : CustomAncientModel
             options.Add(AncientOption<EnergizedCoin>());
         }
 
-        options.Add(AncientOption<DeadBattery>());
+        if (actNumber is null or 3)
+        {
+            options.Add(AncientOption<DeadBattery>());
+        }
+
         options.Add(AncientOption<HugeHouse>());
         options.Add(AncientOption<OgreHead>());
         options.Add(AncientOption<SpiderWeb>());
@@ -138,7 +142,10 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         {
             options.Add(AncientOption<MagnifyingGlass>());
             options.Add(AncientOption<NeverEndingSparkler>());
-            options.Add(AncientOption<RedRose>());
+            if (actNumber is null or 3)
+            {
+                options.Add(AncientOption<RedRose>());
+            }
         }
     }
 }
