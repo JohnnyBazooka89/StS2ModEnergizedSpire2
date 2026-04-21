@@ -16,22 +16,22 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 [Pool(typeof(EventRelicPool))]
 public class EnergizedCoin : EnergizedSpire2Relic
 {
-    private readonly LocString ectoplasmCurrentEffectLoc =
+    private readonly LocString _ectoplasmCurrentEffectLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.currentEffect");
 
-    private readonly LocString ectoplasmDescriptionLoc =
+    private readonly LocString _ectoplasmDescriptionLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.description");
 
-    private readonly LocString ectoplasmTitleLoc =
+    private readonly LocString _ectoplasmTitleLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.title");
 
-    private readonly LocString sozuCurrentEffectLoc =
+    private readonly LocString _sozuCurrentEffectLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.currentEffect");
 
-    private readonly LocString sozuDescriptionLoc =
+    private readonly LocString _sozuDescriptionLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.description");
 
-    private readonly LocString sozuTitleLoc =
+    private readonly LocString _sozuTitleLoc =
         LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.title");
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
@@ -84,14 +84,14 @@ public class EnergizedCoin : EnergizedSpire2Relic
             switch (CurrentEffect)
             {
                 case EnergizedCoinEffect.Sozu:
-                    hoverTips.Add(new HoverTip(sozuCurrentEffectLoc, sozuDescriptionLoc));
+                    hoverTips.Add(new HoverTip(_sozuCurrentEffectLoc, _sozuDescriptionLoc));
                     break;
                 case EnergizedCoinEffect.Ectoplasm:
-                    hoverTips.Add(new HoverTip(ectoplasmCurrentEffectLoc, ectoplasmDescriptionLoc));
+                    hoverTips.Add(new HoverTip(_ectoplasmCurrentEffectLoc, _ectoplasmDescriptionLoc));
                     break;
                 default:
-                    hoverTips.Add(new HoverTip(sozuTitleLoc, sozuDescriptionLoc));
-                    hoverTips.Add(new HoverTip(ectoplasmTitleLoc, ectoplasmDescriptionLoc));
+                    hoverTips.Add(new HoverTip(_sozuTitleLoc, _sozuDescriptionLoc));
+                    hoverTips.Add(new HoverTip(_ectoplasmTitleLoc, _ectoplasmDescriptionLoc));
                     break;
             }
 
