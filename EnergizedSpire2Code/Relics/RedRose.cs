@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -38,7 +39,7 @@ public class RedRose : EnergizedSpire2Relic
         if (creature.Side == Owner.Creature.Side)
             return Task.CompletedTask;
         Flash();
-        return PowerCmd.Apply<ThornsPower>(creature, DynamicVars["ThornsPower"].BaseValue, null, null);
+        return PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), creature, DynamicVars["ThornsPower"].BaseValue, null, null);
     }
 
     public override async Task AfterRoomEntered(AbstractRoom room)
@@ -48,6 +49,6 @@ public class RedRose : EnergizedSpire2Relic
         IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         Flash();
-        await PowerCmd.Apply<ThornsPower>(targets, DynamicVars["ThornsPower"].BaseValue, null, null);
+        await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), targets, DynamicVars["ThornsPower"].BaseValue, null, null);
     }
 }

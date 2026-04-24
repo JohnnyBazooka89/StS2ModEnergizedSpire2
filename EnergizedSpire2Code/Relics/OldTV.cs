@@ -40,7 +40,7 @@ public class OldTV : EnergizedSpire2Relic
     public override async Task BeforeHandDraw(
         Player player,
         PlayerChoiceContext choiceContext,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (player != Owner || combatState.RoundNumber != 1)
         {
@@ -55,7 +55,7 @@ public class OldTV : EnergizedSpire2Relic
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,
-            PileType.Draw, true, CardPilePosition.Random));
+            PileType.Draw, Owner, CardPilePosition.Random));
         await Cmd.Wait(3f);
     }
 }

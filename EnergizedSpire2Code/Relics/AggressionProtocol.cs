@@ -73,7 +73,7 @@ public class AggressionProtocol : EnergizedSpire2Relic
     public override Task BeforeSideTurnStart(
         PlayerChoiceContext choiceContext,
         CombatSide side,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (side != Owner.Creature.Side)
             return Task.CompletedTask;

@@ -58,7 +58,7 @@ public class RottingSkull : EnergizedSpire2Relic
         Status = flag ? RelicStatus.Normal : RelicStatus.Active;
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {
         if (side != Owner.Creature.Side || Status != RelicStatus.Active)
             return;

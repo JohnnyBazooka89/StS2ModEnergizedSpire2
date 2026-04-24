@@ -98,11 +98,12 @@ public class ReceptionProblemsPower : EnergizedSpire2Power
         }
         else
         {
-            await PowerCmd.Apply<FocusPower>(target, Sign * amount, applier, cardSource, true);
+            await PowerCmd.Apply<FocusPower>(new ThrowingPlayerChoiceContext(), target, Sign * amount, applier, cardSource, true);
         }
     }
 
     public override async Task AfterPowerAmountChanged(
+        PlayerChoiceContext choiceContext,
         PowerModel power,
         Decimal amount,
         Creature? applier,
@@ -116,7 +117,7 @@ public class ReceptionProblemsPower : EnergizedSpire2Power
         }
         else
         {
-            await PowerCmd.Apply<FocusPower>(Owner,
+            await PowerCmd.Apply<FocusPower>(choiceContext, Owner,
                 Sign * amount, applier, cardSource, true);
         }
     }
@@ -127,7 +128,7 @@ public class ReceptionProblemsPower : EnergizedSpire2Power
             return;
         Flash();
         await PowerCmd.Remove(this);
-        await PowerCmd.Apply<FocusPower>(Owner, -Sign * Amount,
+        await PowerCmd.Apply<FocusPower>(choiceContext, Owner, -Sign * Amount,
             Owner, null);
     }
 }

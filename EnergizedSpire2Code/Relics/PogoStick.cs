@@ -52,7 +52,7 @@ public class PogoStick : EnergizedSpire2Relic
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,
-            PileType.Draw, true, CardPilePosition.Random));
+            PileType.Draw, Owner, CardPilePosition.Random));
 
         UsedThisTurn = true;
     }
@@ -60,7 +60,7 @@ public class PogoStick : EnergizedSpire2Relic
     public override Task BeforeSideTurnStart(
         PlayerChoiceContext choiceContext,
         CombatSide side,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (side != Owner.Creature.Side)
             return Task.CompletedTask;

@@ -47,14 +47,14 @@ public class HighHeels : EnergizedSpire2Relic
         }
 
         Flash();
-        await PowerCmd.Apply<DexterityPower>(Owner.Creature, -DynamicVars.Dexterity.BaseValue,
+        await PowerCmd.Apply<DexterityPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, -DynamicVars.Dexterity.BaseValue,
             Owner.Creature, null);
     }
 
     public override async Task BeforeHandDraw(
         Player player,
         PlayerChoiceContext choiceContext,
-        CombatState combatState)
+        ICombatState combatState)
     {
         if (player != Owner || combatState.RoundNumber != 1)
         {
@@ -69,7 +69,7 @@ public class HighHeels : EnergizedSpire2Relic
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,
-            PileType.Draw, true, CardPilePosition.Random));
+            PileType.Draw, Owner, CardPilePosition.Random));
         await Cmd.Wait(3f);
     }
 }

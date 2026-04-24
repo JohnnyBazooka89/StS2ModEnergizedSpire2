@@ -3,6 +3,7 @@ using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.Powers;
@@ -38,7 +39,7 @@ public class BrassCoil : EnergizedSpire2Relic
         if (creature.Side == Owner.Creature.Side)
             return Task.CompletedTask;
         Flash();
-        return PowerCmd.Apply<ArtifactPower>(creature, DynamicVars["ArtifactPower"].BaseValue, null, null);
+        return PowerCmd.Apply<ArtifactPower>(new ThrowingPlayerChoiceContext(), creature, DynamicVars["ArtifactPower"].BaseValue, null, null);
     }
 
     public override async Task AfterRoomEntered(AbstractRoom room)
@@ -49,6 +50,6 @@ public class BrassCoil : EnergizedSpire2Relic
             .Where(c => c.IsAlive);
         Flash();
         decimal factor = targets.Count() == 1 ? 2M : 1M;
-        await PowerCmd.Apply<ArtifactPower>(targets, DynamicVars["ArtifactPower"].BaseValue * factor, null, null);
+        await PowerCmd.Apply<ArtifactPower>(new ThrowingPlayerChoiceContext(), targets, DynamicVars["ArtifactPower"].BaseValue * factor, null, null);
     }
 }

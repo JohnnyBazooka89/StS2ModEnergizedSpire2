@@ -24,7 +24,7 @@ public class RoyalCoffers : EnergizedSpire2Relic
         HoverTipFactory.ForEnergy(this)
     ];
 
-    public override async Task AfterSideTurnStart(CombatSide side, CombatState combatState)
+    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
     {
         if (side != Owner.Creature.Side ||
             Owner.Gold < DynamicVars.Gold.BaseValue)
