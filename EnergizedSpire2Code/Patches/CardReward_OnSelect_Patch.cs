@@ -11,7 +11,7 @@ using MegaCrit.Sts2.Core.Runs;
 namespace EnergizedSpire2.EnergizedSpire2Code.Patches;
 
 [HarmonyPatch(typeof(CardReward), "OnSelect")]
-public static class CardReward_OnSelect_PostfixPatch
+public static class CardReward_OnSelect_Patch
 {
     static async Task<bool> Postfix(Task<bool> __result, CardReward __instance)
     {

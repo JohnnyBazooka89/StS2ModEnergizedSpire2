@@ -6,7 +6,7 @@ using HarmonyLib;
 namespace EnergizedSpire2.EnergizedSpire2Code.Patches;
 
 [HarmonyPatch(typeof(CustomAncientModel), nameof(CustomAncientModel.OptionPools), MethodType.Getter)]
-public static class CustomAncientModel_OptionPools_PrefixPatch
+public static class CustomAncientModel_OptionPools_Patch
 {
     static bool Prefix(CustomAncientModel __instance, ref OptionPools __result)
     {
