@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4a20uq3oneis"
-path="res://.godot/imported/energized_coin_ectoplasm.png-9ed27ed95e64178344c1e1566b95d957.ctex"
+path="res://.godot/imported/energized_coin.png-0e62e685959d4519d9fbb56856429f38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EnergizedSpire2/images/relics/outline/energized_coin_ectoplasm.png"
-dest_files=["res://.godot/imported/energized_coin_ectoplasm.png-9ed27ed95e64178344c1e1566b95d957.ctex"]
+source_file="res://EnergizedSpire2/images/relics/outline/energized_coin.png"
+dest_files=["res://.godot/imported/energized_coin.png-0e62e685959d4519d9fbb56856429f38.ctex"]
 
 [params]
 
