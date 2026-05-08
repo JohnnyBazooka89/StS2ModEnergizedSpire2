@@ -62,7 +62,7 @@
         <!-- Diasble architecture mismatch warning; mods are ideally built for all platforms (MSIL)
              while your local StS2 version will be for your specific platform. -->
         <NoWarn>$(NoWarn);MSB3270</NoWarn>
-        <BaseLibVersion>*</BaseLibVersion>
+        <BaseLibVersion>3.1.2</BaseLibVersion>
     </PropertyGroup>
 
     <ItemGroup Condition="Exists('$(Sts2DataDir)')">
@@ -113,7 +113,7 @@
         <Message Text="Copying .dll, manifest, and .pdb to mods folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
-        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+        <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Message Text="Copying .dll and manifest to mods/release folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)../release/$(MSBuildProjectName)/"/>
         <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)../release/$(MSBuildProjectName)/"/>
