@@ -1,134 +1,26 @@
 ﻿using EnergizedSpire2.EnergizedSpire2Code.Cards;
-using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
-using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Powers;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Powers;
 
-public class ReceptionProblemsPower : EnergizedSpire2Power
+public class ReceptionProblemsPower : EnergizedSpire2TemporaryPower<ReceptionProblems, FocusPower>
 {
-    private bool _shouldIgnoreNextInstance;
+    protected override Func<PlayerChoiceContext, Creature, decimal, Creature?, CardModel?, bool, Task> ApplyPowerFunc
+        => (playerChoiceContext, creature, amount, applier, cardSource, _)
+            => PowerCmd.Apply<FocusPower>(playerChoiceContext, creature,
+                amount, applier, cardSource);
 
-    public override PowerType Type => !IsPositive ? PowerType.Debuff : PowerType.Buff;
+    public override PowerType Type => PowerType.Debuff;
 
-    public override PowerStackType StackType => PowerStackType.Counter;
+    protected override bool InvertInternalPowerAmount => true;
 
-    private AbstractModel OriginModel => ModelDb.Card<ReceptionProblems>();
+    public override LocString Description => new("powers", "TEMPORARY_FOCUS_DOWN.description");
 
-    private bool IsPositive => false;
-
-    private int Sign => !IsPositive ? -1 : 1;
-
-    public override LocString Title
-    {
-        get
-        {
-            switch (OriginModel)
-            {
-                case CardModel cardModel:
-                    return cardModel.TitleLocString;
-                case PotionModel potionModel:
-                    return potionModel.Title;
-                case RelicModel relicModel:
-                    return relicModel.Title;
-                default:
-                    throw new InvalidOperationException();
-            }
-        }
-    }
-
-    public override LocString Description =>
-        new("powers",
-            IsPositive ? "TEMPORARY_FOCUS_POWER.description" : "TEMPORARY_FOCUS_DOWN.description");
-
-    protected override string SmartDescriptionLocKey =>
-        !IsPositive
-            ? "TEMPORARY_FOCUS_DOWN.smartDescription"
-            : "TEMPORARY_FOCUS_POWER.smartDescription";
-
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
-    {
-        get
-        {
-            List<IHoverTip> items = new List<IHoverTip>();
-            List<IHoverTip> hoverTipList = items;
-            IEnumerable<IHoverTip> collection;
-            switch (OriginModel)
-            {
-                case CardModel card:
-                    collection =
-                    [
-                        HoverTipFactory.FromCard(card)
-                    ];
-                    break;
-                case PotionModel model:
-                    collection =
-                    [
-                        HoverTipFactory.FromPotion(model)
-                    ];
-                    break;
-                case RelicModel relic:
-                    collection = HoverTipFactory.FromRelic(relic);
-                    break;
-                default:
-                    throw new InvalidOperationException();
-            }
-
-            hoverTipList.AddRange(collection);
-            items.Add(HoverTipFactory.FromPower<FocusPower>());
-            return items;
-        }
-    }
-
-    public override async Task BeforeApplied(
-        Creature target,
-        Decimal amount,
-        Creature? applier,
-        CardModel? cardSource)
-    {
-        if (_shouldIgnoreNextInstance)
-        {
-            _shouldIgnoreNextInstance = false;
-        }
-        else
-        {
-            await PowerCmd.Apply<FocusPower>(new ThrowingPlayerChoiceContext(), target, Sign * amount, applier, cardSource, true);
-        }
-    }
-
-    public override async Task AfterPowerAmountChanged(
-        PlayerChoiceContext choiceContext,
-        PowerModel power,
-        Decimal amount,
-        Creature? applier,
-        CardModel? cardSource)
-    {
-        if (amount == Amount || power != this)
-            return;
-        if (_shouldIgnoreNextInstance)
-        {
-            _shouldIgnoreNextInstance = false;
-        }
-        else
-        {
-            await PowerCmd.Apply<FocusPower>(choiceContext, Owner,
-                Sign * amount, applier, cardSource, true);
-        }
-    }
-
-    public override async Task AfterTurnEnd(PlayerChoiceContext choiceContext, CombatSide side)
-    {
-        if (side != Owner.Side)
-            return;
-        Flash();
-        await PowerCmd.Remove(this);
-        await PowerCmd.Apply<FocusPower>(choiceContext, Owner, -Sign * Amount,
-            Owner, null);
-    }
+    protected override string SmartDescriptionLocKey => "TEMPORARY_FOCUS_DOWN.smartDescription";
 }
