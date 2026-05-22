@@ -2,6 +2,7 @@
 using MegaCrit.Sts2.Core.Combat;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
+using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
@@ -60,9 +61,10 @@ public class PogoStick : EnergizedSpire2Relic
     public override Task BeforeSideTurnStart(
         PlayerChoiceContext choiceContext,
         CombatSide side,
+        IReadOnlyList<Creature> participants,
         ICombatState combatState)
     {
-        if (side != Owner.Creature.Side)
+        if (!participants.Contains(Owner.Creature))
             return Task.CompletedTask;
         UsedThisTurn = false;
         return Task.CompletedTask;

@@ -58,9 +58,12 @@ public class RottingSkull : EnergizedSpire2Relic
         Status = flag ? RelicStatus.Normal : RelicStatus.Active;
     }
 
-    public override async Task AfterSideTurnStart(CombatSide side, ICombatState combatState)
+    public override async Task AfterSideTurnStart(
+        CombatSide side,
+        IReadOnlyList<Creature> participants,
+        ICombatState combatState)
     {
-        if (side != Owner.Creature.Side || Status != RelicStatus.Active)
+        if (!participants.Contains(Owner.Creature) || Status != RelicStatus.Active)
             return;
         Flash();
         await PlayerCmd.GainEnergy(DynamicVars.Energy.BaseValue, Owner);
