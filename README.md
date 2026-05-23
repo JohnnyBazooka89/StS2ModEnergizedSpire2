@@ -13,7 +13,7 @@ The mod is available in:
 - Korean (thanks to snumodder)
 
 ## 📦 Dependencies
-- BaseLib version 0.2.8 or newer.
+- BaseLib version 3.1.4 or newer.
 
 ## ⚙️ Installation
 1. Go to the [Releases](https://github.com/JohnnyBazooka89/StS2ModEnergizedSpire2/releases) page on GitHub and download the latest version.
