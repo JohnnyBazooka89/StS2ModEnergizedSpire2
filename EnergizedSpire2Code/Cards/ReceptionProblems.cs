@@ -42,7 +42,7 @@ public class ReceptionProblems() : EnergizedSpire2Card(-1, CardType.Curse, CardR
             return;
 
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);
-        await PowerCmd.Apply<ReceptionProblemsPower>(new ThrowingPlayerChoiceContext(), Owner.Creature,
+        await PowerCmd.Apply<ReceptionProblemsPower>(choiceContext, Owner.Creature,
             DynamicVars["FocusPower"].BaseValue, Owner.Creature, this);
     }
 }
