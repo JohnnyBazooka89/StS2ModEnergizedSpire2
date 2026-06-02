@@ -60,7 +60,7 @@
   "ENERGIZEDSPIRE2-RED_ROSE.description": "在回合开始时获得{Energy:energyIcons()}。所有敌人在战斗开始时获得[blue]{ThornsPower}[/blue]层[gold]荆棘[/gold]。",
   "ENERGIZEDSPIRE2-RED_ROSE.flavor": "世上无无刺之玫瑰。",
   "ENERGIZEDSPIRE2-SPIDER_WEB.title": "蛛网",
-  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "在回合开始时获得{Energy:energyIcons()}。每回合，[gold]手牌[/gold]中随机一张[gold]攻击[/gold]牌在本回合费用增加{EnergyCostIncrease:energyIcons()}。",
+  "ENERGIZEDSPIRE2-SPIDER_WEB.description": "在回合开始时获得{Energy:energyIcons()}。每回合，[gold]手牌[/gold]中随机一张[gold]攻击[/gold]牌在本回合变为[red]缠身[/red]。",
   "ENERGIZEDSPIRE2-SPIDER_WEB.flavor": "用它去抓住敌人，你抓你自己干啥......",
   "ENERGIZEDSPIRE2-STICKY_HAND.title": "粘粘手",
   "ENERGIZEDSPIRE2-STICKY_HAND.description": "在回合开始时获得{Energy:energyIcons()}。每当你在卡牌奖励中选取一张牌时，改为拿走所提供的全部卡牌。",
