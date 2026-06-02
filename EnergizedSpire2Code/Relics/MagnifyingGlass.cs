@@ -17,13 +17,13 @@ public class MagnifyingGlass : EnergizedSpire2Relic
     private const string MoreHpPercentKey = "MoreHpPercent";
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new(MoreHpPercentKey, 15M),
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this)
     ];

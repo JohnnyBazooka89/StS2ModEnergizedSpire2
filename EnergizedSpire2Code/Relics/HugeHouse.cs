@@ -22,7 +22,7 @@ public class HugeHouse : EnergizedSpire2Relic
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new(PotionsToLoseKey, 1M),
@@ -32,7 +32,7 @@ public class HugeHouse : EnergizedSpire2Relic
         new(CardsToDowngradeKey, 1)
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    public override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {

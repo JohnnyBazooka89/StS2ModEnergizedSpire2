@@ -17,13 +17,13 @@ public class RedRose : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new PowerVar<ThornsPower>(1M)
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this),
         HoverTipFactory.FromPower<ThornsPower>()

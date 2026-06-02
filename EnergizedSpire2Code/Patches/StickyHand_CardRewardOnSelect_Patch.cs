@@ -29,9 +29,7 @@ public static class CardReward_OnSelect_Patch
         if (cardReward == null)
             return;
 
-        var cards = Traverse.Create(cardReward)
-            .Field("_cards")
-            .GetValue<List<CardCreationResult>>();
+        var cards = cardReward._cards;
 
         if (cards == null || cards.Count == 0)
             return;

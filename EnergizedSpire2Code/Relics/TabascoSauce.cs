@@ -16,13 +16,13 @@ public class TabascoSauce : EnergizedSpire2Relic, IHealAmountModifier
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new(HpReductionPercentKey, 50M),
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this)
     ];

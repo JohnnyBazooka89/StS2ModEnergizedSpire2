@@ -20,14 +20,14 @@ public class HighHeels : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new PowerVar<DexterityPower>(1M),
         new CardsVar(1),
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this),
         HoverTipFactory.FromPower<DexterityPower>(),

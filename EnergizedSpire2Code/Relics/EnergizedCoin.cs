@@ -51,7 +51,7 @@ public class EnergizedCoin : EnergizedSpire2Relic
     }
 
 
-    protected override string BigIconPath
+    public override string BigIconPath
     {
         get
         {
@@ -67,12 +67,12 @@ public class EnergizedCoin : EnergizedSpire2Relic
 
     private EnergizedCoinEffect? CurrentEffect { get; set; }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1)
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips
+    public override IEnumerable<IHoverTip> ExtraHoverTips
     {
         get
         {

@@ -12,12 +12,12 @@ public class StickyHand : EnergizedSpire2Relic
 {
     public override RelicRarity Rarity => RelicRarity.Ancient;
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1)
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this)
     ];

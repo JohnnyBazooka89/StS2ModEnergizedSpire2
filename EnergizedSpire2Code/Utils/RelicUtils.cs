@@ -14,7 +14,7 @@ public class RelicUtils
             var relic = nRelicInventoryHolder.Relic;
             if (relic.Model.Id == relicId)
             {
-                Traverse.Create(relic).Method("Reload").GetValue();
+                relic.Reload();
             }
         }
     }

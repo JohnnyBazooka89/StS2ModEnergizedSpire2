@@ -16,7 +16,7 @@ public abstract class EnergizedSpire2Relic : CustomRelicModel
         }
     }
 
-    protected override string PackedIconOutlinePath
+    public override string PackedIconOutlinePath
     {
         get
         {
@@ -25,7 +25,7 @@ public abstract class EnergizedSpire2Relic : CustomRelicModel
         }
     }
 
-    protected override string BigIconPath
+    public override string BigIconPath
     {
         get
         {

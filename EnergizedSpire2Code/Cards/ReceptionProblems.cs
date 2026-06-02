@@ -14,7 +14,7 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Cards;
 [Pool(typeof(CurseCardPool))]
 public class ReceptionProblems() : EnergizedSpire2Card(-1, CardType.Curse, CardRarity.Curse, TargetType.None)
 {
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new PowerVar<FocusPower>(2M)
@@ -28,7 +28,7 @@ public class ReceptionProblems() : EnergizedSpire2Card(-1, CardType.Curse, CardR
         CardKeyword.Unplayable,
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.FromPower<FocusPower>()
     ];

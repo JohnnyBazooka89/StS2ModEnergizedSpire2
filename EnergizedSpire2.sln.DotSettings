@@ -2,10 +2,13 @@
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/@KeyIndexDefined">True</s:Boolean>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=1BE313041F989B4185D2966033C031C3/@KeyIndexDefined">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=1BE313041F989B4185D2966033C031C3/EntryName/@EntryValue">Custom Card</s:String>
-	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=1BE313041F989B4185D2966033C031C3/Position/@EntryValue">11</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=1BE313041F989B4185D2966033C031C3/Position/@EntryValue">10</s:Int64>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=B4D0CA86CBDACD42AD544A77CAE9FDEC/@KeyIndexDefined">True</s:Boolean>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=B4D0CA86CBDACD42AD544A77CAE9FDEC/EntryName/@EntryValue">Custom Relic</s:String>
-	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=B4D0CA86CBDACD42AD544A77CAE9FDEC/Position/@EntryValue">12</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=B4D0CA86CBDACD42AD544A77CAE9FDEC/Position/@EntryValue">11</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=00E2BB0BE57C7344A9558AF85C99E086/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=00E2BB0BE57C7344A9558AF85C99E086/EntryName/@EntryValue">Custom Power</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/QuickList/=F0CA621CDF5AB24282D8CDC11C520997/Entry/=00E2BB0BE57C7344A9558AF85C99E086/Position/@EntryValue">12</s:Int64>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1BE313041F989B4185D2966033C031C3/Field/=CLASS/Expression/@EntryValue">getAlphaNumericFileNameWithoutExtension()</s:String>
 	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1BE313041F989B4185D2966033C031C3/Field/=CLASS/InitialRange/@EntryValue">-1</s:Int64>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1BE313041F989B4185D2966033C031C3/Field/=COST/Expression/@EntryValue">guessExpectedType("")</s:String>
@@ -79,6 +82,35 @@ public class $CLASS$() : EnergizedSpire2.EnergizedSpire2Code.Cards.EnergizedSpir
 
 public class $CLASS$() : EnergizedSpire2.EnergizedSpire2Code.Relics.EnergizedSpire2Relic {
     public override MegaCrit.Sts2.Core.Entities.Relics.RelicRarity Rarity =&gt; MegaCrit.Sts2.Core.Entities.Relics.RelicRarity.$RARITY$;
+    
+    $END$
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/@KeyIndexDefined">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/CustomProperties/=FileName/@EntryIndexedValue">Power</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Description/@EntryValue">Custom Power</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=CLASS/Expression/@EntryValue">getAlphaNumericFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=CLASS/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=CLASS/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=NAMESPACE/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=NAMESPACE/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=TYPE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=TYPE/Expression/@EntryValue">list("Buff,Debuff")</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Field/=TYPE/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=00E2BB0BE57C7344A9558AF85C99E086/Text/@EntryValue">namespace $NAMESPACE$;
+
+public class $CLASS$() : EnergizedSpire2.EnergizedSpire2Code.Powers.EnergizedSpire2Power {
+    public override MegaCrit.Sts2.Core.Entities.Powers.PowerType Type =&gt; MegaCrit.Sts2.Core.Entities.Powers.PowerType.$TYPE$;
+    public override MegaCrit.Sts2.Core.Entities.Powers.PowerStackType StackType =&gt; MegaCrit.Sts2.Core.Entities.Powers.PowerStackType.Counter;
     
     $END$
 }</s:String></wpf:ResourceDictionary>

@@ -4,7 +4,7 @@ using MegaCrit.Sts2.Core.Logging;
 using MegaCrit.Sts2.Core.Modding;
 using Logger = MegaCrit.Sts2.Core.Logging.Logger;
 
-namespace EnergizedSpire2;
+namespace EnergizedSpire2.EnergizedSpire2Code;
 
 [ModInitializer(nameof(Initialize))]
 public partial class EnergizedSpire2MainFile : Node

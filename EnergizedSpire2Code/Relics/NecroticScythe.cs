@@ -21,13 +21,13 @@ public class NecroticScythe : EnergizedSpire2Relic
 
     private bool UsedThisTurn { get; set; }
 
-    protected override IEnumerable<DynamicVar> CanonicalVars =>
+    public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
         new EnergyVar(EnergyThresholdKey, 2)
     ];
 
-    protected override IEnumerable<IHoverTip> ExtraHoverTips =>
+    public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this)
     ];
