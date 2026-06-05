@@ -13,7 +13,7 @@ The mod is available in:
 - Korean (thanks to snumodder)
 
 ## 📦 Dependencies
-- BaseLib version 3.1.4 or newer.
+- BaseLib version 3.2.0 or newer.
 
 ## ⚙️ Installation
 1. Go to the [Releases](https://github.com/JohnnyBazooka89/StS2ModEnergizedSpire2/releases) page on GitHub and download the latest version.
@@ -48,7 +48,7 @@ The mod is available in:
 | All characters | Never-Ending Sparkler| Gain [E] at the start of each turn. 50% of Question Mark rooms are changed into Elite rooms.                                                                                                       | Filtered out in Multiplayer                          |
 | All characters | Ogre Head            | Gain [E] at the start of each turn. Whenever you play a card that targets an enemy, you have a 50% chance to target another enemy.                                                                 | -                                                    |
 | All characters | Red Rose             | Gain [E] at the start of each turn. All enemies start combat with 1 Thorns.                                                                                                                        | Available only in Act 3; Filtered out in Multiplayer |
-| All characters | Spider Web           | Gain [E] at the start of each turn. Each turn, one random Attack in hand costs 1 more.                                                                                                             | -                                                    |
+| All characters | Spider Web           | Gain [E] at the start of each turn. Each turn, one random Attack in Hand becomes Entangled this turn.                                                                                              | -                                                    |
 | All characters | Sticky Hand          | Gain [E] at the start of each turn. Whenever you would take a card in a future card reward, you take ALL the offered cards instead.                                                                | -                                                    |
 
 ## 🤝 Contact

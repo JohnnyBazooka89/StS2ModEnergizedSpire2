@@ -3,14 +3,14 @@
   "name": "Energized Spire 2.0",
   "author": "JohnnyBazooka89",
   "description": "This is a content mod that adds a new Ancient with a lot of Energy relics!",
-  "version": "v0.4.6",
+  "version": "v0.4.7",
   "has_pck": true,
   "has_dll": true,
-  "min_game_version": "v0.106.0",
+  "min_game_version": "v0.107.0",
   "dependencies": [
     {
       "id": "BaseLib",
-      "min_version": "v3.1.4"
+      "min_version": "v3.2.0"
     }
   ],
   "affects_gameplay": true

@@ -109,11 +109,17 @@ public class EnergizedCoin : EnergizedSpire2Relic
         return player != Owner || CurrentEffect != EnergizedCoinEffect.Sozu;
     }
 
-    public override bool ShouldGainGold(Decimal amount, Player player)
+    public override Decimal ModifyGoldGained(Player player, Decimal amount)
     {
-        return player != Owner || CurrentEffect != EnergizedCoinEffect.Ectoplasm;
+        return player != Owner || CurrentEffect != EnergizedCoinEffect.Ectoplasm ? amount : 0M;
     }
 
+    public override Task AfterModifyingGoldGained(Player player, Decimal amount)
+    {
+        Flash();
+        return Task.CompletedTask;
+    }
+    
     public override Task AfterRoomEntered(AbstractRoom room)
     {
         EnergizedCoinEffect[] values = Enum.GetValues<EnergizedCoinEffect>();
