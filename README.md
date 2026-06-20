@@ -6,6 +6,8 @@ This mod introduces a new Ancient, **Energized Darv**, who can appear in Act 2 o
 
 Each base-game character has two character-specific relics, and there are 10 shared relics.
 
+This mod should work properly in multiplayer. In case of any problems, please report them and include the logs (%APPDATA%\SlayTheSpire2\logs\godot.log file) if possible.
+
 ## 🌐 Localization
 The mod is available in:
 - English
