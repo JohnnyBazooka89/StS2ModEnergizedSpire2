@@ -17,22 +17,22 @@ namespace EnergizedSpire2.EnergizedSpire2Code.Relics;
 public class EnergizedCoin : EnergizedSpire2Relic
 {
     private readonly LocString _ectoplasmCurrentEffectLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.currentEffect");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.currentEffect")!;
 
     private readonly LocString _ectoplasmDescriptionLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.description");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.description")!;
 
     private readonly LocString _ectoplasmTitleLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.title");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Ectoplasm.title")!;
 
     private readonly LocString _sozuCurrentEffectLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.currentEffect");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.currentEffect")!;
 
     private readonly LocString _sozuDescriptionLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.description");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.description")!;
 
     private readonly LocString _sozuTitleLoc =
-        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.title");
+        LocString.GetIfExists(_locTable, $"{ModelDb.GetId<EnergizedCoin>().Entry}.Sozu.title")!;
 
     public override RelicRarity Rarity => RelicRarity.Ancient;
 

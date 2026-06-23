@@ -38,7 +38,7 @@ public class ReceptionProblems() : EnergizedSpire2Card(-1, CardType.Curse, CardR
         CardModel card,
         bool fromHandDraw)
     {
-        if (card != this || Pile.Type != PileType.Hand)
+        if (card != this || Pile?.Type != PileType.Hand)
             return;
 
         await CreatureCmd.TriggerAnim(Owner.Creature, "Cast", Owner.Character.CastAnimDelay);

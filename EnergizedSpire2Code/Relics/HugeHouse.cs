@@ -72,8 +72,8 @@ public class HugeHouse : EnergizedSpire2Relic
             return;
         }
 
-        PotionModel potion = Owner.RunState.Rng.Niche.NextItem(potions);
-        await PotionCmd.Discard(potion);
+        PotionModel? potion = Owner.RunState.Rng.Niche.NextItem(potions);
+        await PotionCmd.Discard(potion!);
     }
 
     private async Task AddCharacterStrike()
@@ -93,7 +93,7 @@ public class HugeHouse : EnergizedSpire2Relic
             return;
         }
 
-        CardModel card = Owner.RunState.Rng.Niche.NextItem(upgradedCards);
+        CardModel card = Owner.RunState.Rng.Niche.NextItem(upgradedCards)!;
         upgradedCards.Remove(card);
         CardCmd.Downgrade(card);
         CardCmd.Preview(card, style: CardPreviewStyle.MessyLayout);
@@ -102,9 +102,8 @@ public class HugeHouse : EnergizedSpire2Relic
 
     private CardModel getCharacterStrike()
     {
-        CardModel strike = IsMutable
-            ? Owner?.Character.CardPool.AllCards.Where(c =>
-                c.Rarity == CardRarity.Basic && c.Tags.Contains(CardTag.Strike)).FirstOrDefault()
+        CardModel? strike = IsMutable
+            ? Owner.Character.CardPool.AllCards.FirstOrDefault(c => c.Rarity == CardRarity.Basic && c.Tags.Contains(CardTag.Strike))
             : null;
 
         return strike ?? ModelDb.Card<StrikeIronclad>();

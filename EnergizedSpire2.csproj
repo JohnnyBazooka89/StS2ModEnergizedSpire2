@@ -48,6 +48,10 @@
         <None Include="EnergizedSpire2/**"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="fix.ps1" />
+    </ItemGroup>
+
     <Target Name="CheckDependencyPaths">
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"

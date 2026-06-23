@@ -34,7 +34,7 @@ public class OgreHead : EnergizedSpire2Relic
 
     public override Task BeforeCardPlayed(CardPlay cardPlay)
     {
-        IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
+        IEnumerable<Creature> targets = Owner.Creature.CombatState!.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         if (cardPlay.Card.Owner != Owner || cardPlay.Target == null || targets.Count() < 2)
         {

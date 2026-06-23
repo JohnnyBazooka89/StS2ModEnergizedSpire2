@@ -46,7 +46,7 @@ public class BrassCoil : EnergizedSpire2Relic
     {
         if (room is not CombatRoom)
             return;
-        IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
+        IEnumerable<Creature> targets = Owner.Creature.CombatState!.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         Flash();
         decimal factor = targets.Count() == 1 ? 2M : 1M;

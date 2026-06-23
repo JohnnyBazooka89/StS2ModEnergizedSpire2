@@ -42,14 +42,14 @@ public class PogoStick : EnergizedSpire2Relic
 
     public override async Task AfterCardDiscarded(PlayerChoiceContext choiceContext, CardModel card)
     {
-        if (UsedThisTurn || card.Owner != Owner || Owner.Creature.Side != Owner.Creature.CombatState.CurrentSide)
+        if (UsedThisTurn || card.Owner != Owner || Owner.Creature.Side != Owner.Creature.CombatState!.CurrentSide)
             return;
         Flash();
 
         List<CardModel> cards = new List<CardModel>();
         for (int index = 0; index < DynamicVars.Cards.IntValue; index++)
         {
-            cards.Add(Owner.Creature.CombatState.CreateCard<Dazed>(Owner));
+            cards.Add(Owner.Creature.CombatState!.CreateCard<Dazed>(Owner));
         }
 
         CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,

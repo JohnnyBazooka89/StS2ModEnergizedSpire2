@@ -46,7 +46,7 @@ public class RedRose : EnergizedSpire2Relic
     {
         if (room is not CombatRoom)
             return;
-        IEnumerable<Creature> targets = Owner.Creature.CombatState.GetOpponentsOf(Owner.Creature)
+        IEnumerable<Creature> targets = Owner.Creature.CombatState!.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         Flash();
         await PowerCmd.Apply<ThornsPower>(new ThrowingPlayerChoiceContext(), targets, DynamicVars["ThornsPower"].BaseValue, null, null);

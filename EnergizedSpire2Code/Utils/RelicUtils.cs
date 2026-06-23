@@ -9,7 +9,7 @@ public class RelicUtils
 {
     public static void ReloadRelicIcon(ModelId relicId)
     {
-        foreach (NRelicInventoryHolder nRelicInventoryHolder in NRun.Instance?.GlobalUi.RelicInventory.RelicNodes)
+        foreach (NRelicInventoryHolder nRelicInventoryHolder in NRun.Instance?.GlobalUi.RelicInventory.RelicNodes ?? [])
         {
             var relic = nRelicInventoryHolder.Relic;
             if (relic.Model.Id == relicId)

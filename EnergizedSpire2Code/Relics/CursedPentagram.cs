@@ -74,8 +74,8 @@ public class CursedPentagram : EnergizedSpire2Relic
     {
         if (Owner.Creature.IsDead || card.Owner != Owner)
             return;
-        CardPile pile = card.Pile;
-        if (pile == null || pile.Type != PileType.Deck ||
+        CardPile? pile = card.Pile;
+        if (pile is not { Type: PileType.Deck } ||
             card.Rarity == CardRarity.Curse ||
             card.Type == CardType.Curse
            )
@@ -89,14 +89,14 @@ public class CursedPentagram : EnergizedSpire2Relic
             return;
         }
 
-        TaskHelper.RunSafely(DoActivateVisuals());
+        _ = TaskHelper.RunSafely(DoActivateVisuals());
 
         HashSet<CardModel> availableCurses = ModelDb.CardPool<CurseCardPool>()
             .GetUnlockedCards(Owner.UnlockState, Owner.RunState.CardMultiplayerConstraint)
             .Where(c => c.CanBeGeneratedByModifiers).ToHashSet();
 
         List<CardPileAddResult> curseAddResult = new List<CardPileAddResult>();
-        CardModel curseToAdd = Owner.RunState.Rng.Niche.NextItem(availableCurses);
+        CardModel? curseToAdd = Owner.RunState.Rng.Niche.NextItem(availableCurses);
 
         if (curseToAdd == null)
         {
