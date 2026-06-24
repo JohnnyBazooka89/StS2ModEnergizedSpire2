@@ -102,7 +102,7 @@ public class HugeHouse : EnergizedSpire2Relic
 
     private CardModel getCharacterStrike()
     {
-        CardModel? strike = IsMutable
+        CardModel? strike = IsMutable && Owner != null
             ? Owner.Character.CardPool.AllCards.FirstOrDefault(c => c.Rarity == CardRarity.Basic && c.Tags.Contains(CardTag.Strike))
             : null;
 
