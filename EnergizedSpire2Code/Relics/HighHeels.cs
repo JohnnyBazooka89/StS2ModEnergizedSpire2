@@ -23,15 +23,13 @@ public class HighHeels : EnergizedSpire2Relic
     public override IEnumerable<DynamicVar> CanonicalVars =>
     [
         new EnergyVar(1),
-        new PowerVar<DexterityPower>(1M),
-        new CardsVar(1),
+        new PowerVar<DexterityPower>(1M)
     ];
 
     public override IEnumerable<IHoverTip> ExtraHoverTips =>
     [
         HoverTipFactory.ForEnergy(this),
-        HoverTipFactory.FromPower<DexterityPower>(),
-        HoverTipFactory.FromCard<Clumsy>(),
+        HoverTipFactory.FromPower<DexterityPower>()
     ];
 
     public override decimal ModifyMaxEnergy(Player player, decimal amount)
@@ -49,27 +47,5 @@ public class HighHeels : EnergizedSpire2Relic
         Flash();
         await PowerCmd.Apply<DexterityPower>(new ThrowingPlayerChoiceContext(), Owner.Creature, -DynamicVars.Dexterity.BaseValue,
             Owner.Creature, null);
-    }
-
-    public override async Task BeforeHandDraw(
-        Player player,
-        PlayerChoiceContext choiceContext,
-        ICombatState combatState)
-    {
-        if (player != Owner || combatState.RoundNumber != 1)
-        {
-            return;
-        }
-
-        Flash();
-        List<CardModel> cards = new List<CardModel>();
-        for (int index = 0; index < DynamicVars.Cards.IntValue; index++)
-        {
-            cards.Add(combatState.CreateCard<Clumsy>(Owner));
-        }
-
-        CardCmd.PreviewCardPileAdd(await CardPileCmd.AddGeneratedCardsToCombat(cards,
-            PileType.Draw, Owner, CardPilePosition.Random));
-        await Cmd.Wait(3f);
     }
 }
