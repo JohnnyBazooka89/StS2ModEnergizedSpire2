@@ -15,7 +15,7 @@ The mod is available in:
 - Korean (thanks to snumodder)
 
 ## 📦 Dependencies
-- BaseLib
+- [BaseLib](https://github.com/Alchyr/BaseLib-StS2)
 
 ## ⚙️ Installation
 1. Go to the [Releases](https://github.com/JohnnyBazooka89/StS2ModEnergizedSpire2/releases) page on GitHub and download the latest version.
@@ -34,7 +34,7 @@ The mod is available in:
 |----------------|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------|
 | Ironclad       | Rotting Skull        | If your HP is at or below 50%, gain [E] and draw 1 additional card at the start of each turn.                                                                                                      | -                                                    |
 | Ironclad       | Tabasco Sauce        | Gain [E] at the start of each turn. Healing effects are reduced by 50%.                                                                                                                            | -                                                    |
-| Silent         | High Heels           | Gain [E] at the start of each turn. At the start of combat, lose 1 Dexterity and shuffle 1 Clumsy into your draw pile.                                                                             | -                                                    |
+| Silent         | High Heels           | Gain [E] at the start of each turn. At the start of combat, lose 1 Dexterity.                                                                             | -                                                    |
 | Silent         | Pogo Stick           | Gain [E] at the start of each turn. The first time each turn you discard a card, shuffle 1 Dazed into your draw pile.                                                                              | -                                                    |
 | Defect         | Old TV               | Gain [E] at the start of each turn. At the start of combat, shuffle 1 Reception Problems into your draw pile. Reception Problems: Unplayable. Whenever this card is drawn, lose 2 Focus this turn. | -                                                    |
 | Defect         | Aggression Protocol  | Gain [E] at the start of each turn. While you have an Attack in hand, the first Skill or Power card you play each turn costs [E] more.                                                             | -                                                    |
