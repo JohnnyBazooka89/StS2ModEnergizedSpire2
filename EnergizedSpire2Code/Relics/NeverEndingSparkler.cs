@@ -4,7 +4,6 @@ using MegaCrit.Sts2.Core.Entities.Relics;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Map;
-using MegaCrit.Sts2.Core.Models.Powers;
 using MegaCrit.Sts2.Core.Models.RelicPools;
 using MegaCrit.Sts2.Core.Nodes.Screens.Map;
 using MegaCrit.Sts2.Core.Random;
@@ -49,7 +48,7 @@ public class NeverEndingSparkler : EnergizedSpire2Relic
     private void ChangeQuestionMarkRoomsIntoEliteRooms()
     {
         ActMap map = Owner.RunState.Map;
-        Rng rng = new Rng(Owner.RunState.Rng.Seed, 100 * Owner.RunState.ActFloor);
+        Rng rng = new Rng(Owner.RunState.Rng.Seed, $"{nameof(NeverEndingSparkler)}_actFloor_{Owner.RunState.ActFloor}");
         List<MapPoint> questionRooms = map.GetAllMapPoints().Where(p => p.PointType == MapPointType.Unknown)
             .ToList();
 
