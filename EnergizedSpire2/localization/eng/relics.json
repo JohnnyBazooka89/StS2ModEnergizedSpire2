@@ -24,7 +24,7 @@
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.description": "If you have at least [blue]{Gold}[/blue] unspent [gold]Gold[/gold], gain {Energy:energyIcons()} at the start of each turn.",
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.flavor": "Money doesn't buy happiness. Just energy.",
   "ENERGIZEDSPIRE2-BRASS_COIL.title": "Brass Coil",
-  "ENERGIZEDSPIRE2-BRASS_COIL.description": "Gain {Energy:energyIcons()} at the start of each turn. Enemies start combat with [blue]{ArtifactPower}[/blue] [gold]Artifact[/gold]. In single-enemy combats, the enemy gains [blue]2[/blue] [gold]Artifact[/gold] instead.",
+  "ENERGIZEDSPIRE2-BRASS_COIL.description": "Gain {Energy:energyIcons()} at the start of each turn. Enemies start each combat with [blue]{ArtifactPower}[/blue] [gold]Artifact[/gold].",
   "ENERGIZEDSPIRE2-BRASS_COIL.flavor": "A courtesy before the inevitable.",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.title": "Necrotic Scythe",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.description": "The first time each turn you play a card that costs {EnergyThreshold:energyIcons()} or more, gain {Energy:energyIcons()}.",

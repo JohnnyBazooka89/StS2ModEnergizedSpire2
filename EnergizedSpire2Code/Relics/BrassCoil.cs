@@ -49,7 +49,6 @@ public class BrassCoil : EnergizedSpire2Relic
         IEnumerable<Creature> targets = Owner.Creature.CombatState!.GetOpponentsOf(Owner.Creature)
             .Where(c => c.IsAlive);
         Flash();
-        decimal factor = targets.Count() == 1 ? 2M : 1M;
-        await PowerCmd.Apply<ArtifactPower>(new ThrowingPlayerChoiceContext(), targets, DynamicVars["ArtifactPower"].BaseValue * factor, null, null);
+        await PowerCmd.Apply<ArtifactPower>(new ThrowingPlayerChoiceContext(), targets, DynamicVars["ArtifactPower"].BaseValue, null, null);
     }
 }

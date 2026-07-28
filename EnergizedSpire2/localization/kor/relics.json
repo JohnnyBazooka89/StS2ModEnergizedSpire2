@@ -24,7 +24,7 @@
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.description": "[blue]{Gold}[/blue] 이상의 [gold]골드[/gold]를 보유하고 있다면, 매 턴 시작 시 {Energy:energyIcons()}를 얻습니다.",
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.flavor": "돈으로 행복은 못 사지. 대신 에너지는 살 수 있어.",
   "ENERGIZEDSPIRE2-BRASS_COIL.title": "황동 코일",
-  "ENERGIZEDSPIRE2-BRASS_COIL.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 적들이 [gold]인공물[/gold]을 [blue]{ArtifactPower}[/blue] 가지고 전투를 시작합니다. 단일 전투에서는 대신 [gold]인공물[/gold]을 [blue]2[/blue] 가지고 시작합니다.",
+  "ENERGIZEDSPIRE2-BRASS_COIL.description": "매 턴 시작 시, {Energy:energyIcons()}를 얻습니다. 적들이 [gold]인공물[/gold]을 [blue]{ArtifactPower}[/blue] 가지고 전투를 시작합니다.",
   "ENERGIZEDSPIRE2-BRASS_COIL.flavor": "피할 수 없는 일을 앞둔 작은 예의.",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.title": "죽음의 낫",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.description": "매 턴마다 처음으로 비용이 {EnergyThreshold:energyIcons()} 이상인 카드를 사용할 때마다, {Energy:energyIcons()}를 얻습니다.",

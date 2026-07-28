@@ -24,7 +24,7 @@
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.description": "若你至少有[blue]{Gold}[/blue]枚未花费的[gold]金币[/gold]，在回合开始时获得{Energy:energyIcons()}。",
   "ENERGIZEDSPIRE2-ROYAL_COFFERS.flavor": "金钱买不到幸福，但能买到能量。",
   "ENERGIZEDSPIRE2-BRASS_COIL.title": "黄铜线圈",
-  "ENERGIZEDSPIRE2-BRASS_COIL.description": "在回合开始时获得{Energy:energyIcons()}。在战斗开始时，所有敌人获得[blue]{ArtifactPower}[/blue]层[gold]人工制品[/gold]。在仅有单个敌人的战斗中，该敌人改为获得[blue]2[/blue]层[gold]人工制品[/gold]。",
+  "ENERGIZEDSPIRE2-BRASS_COIL.description": "在回合开始时获得{Energy:energyIcons()}。在战斗开始时，所有敌人获得[blue]{ArtifactPower}[/blue]层[gold]人工制品[/gold]。",
   "ENERGIZEDSPIRE2-BRASS_COIL.flavor": "在不可避免的结果到来前的一点礼貌。",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.title": "死灵镰刀",
   "ENERGIZEDSPIRE2-NECROTIC_SCYTHE.description": "每回合你第一次打出费用为{EnergyThreshold:energyIcons()}或更高的牌时，获得{Energy:energyIcons()}。",
