@@ -148,4 +148,9 @@ public class EnergizedSpire2Ancient : CustomAncientModel
             }
         }
     }
+
+    public override bool IsValidForAct(ActModel act)
+    {
+        return act.ActNumber() == 2 || act.ActNumber() == 3;
+    }
 }
