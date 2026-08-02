@@ -40,29 +40,27 @@ public class EnergizedCoin : EnergizedSpire2Relic
     {
         get
         {
-            String icon = CurrentEffect switch
-            {
-                EnergizedCoinEffect.Ectoplasm => "energized_coin_ectoplasm",
-                _ => "energized_coin_sozu"
-            };
-            String path = $"{icon}.png".RelicImagePath();
+            String path = $"{GetIconFileName()}.png".RelicImagePath();
             return ResourceLoader.Exists(path) ? path : "relic.png".RelicImagePath();
         }
     }
-
 
     public override string BigIconPath
     {
         get
         {
-            String icon = CurrentEffect switch
-            {
-                EnergizedCoinEffect.Ectoplasm => "energized_coin_ectoplasm",
-                _ => "energized_coin_sozu"
-            };
-            String path = $"{icon}.png".BigRelicImagePath();
+            String path = $"{GetIconFileName()}.png".BigRelicImagePath();
             return ResourceLoader.Exists(path) ? path : "relic.png".BigRelicImagePath();
         }
+    }
+    
+    private string GetIconFileName()
+    {
+        return CurrentEffect switch
+        {
+            EnergizedCoinEffect.Ectoplasm => "energized_coin_ectoplasm",
+            _ => "energized_coin_sozu"
+        };
     }
 
     private EnergizedCoinEffect? CurrentEffect { get; set; }
