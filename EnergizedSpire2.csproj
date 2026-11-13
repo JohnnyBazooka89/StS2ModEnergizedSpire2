@@ -50,6 +50,7 @@
 
     <ItemGroup>
       <Content Include="fix.ps1" />
+      <Content Include="loadFolders" />
     </ItemGroup>
 
     <Target Name="CheckDependencyPaths">
