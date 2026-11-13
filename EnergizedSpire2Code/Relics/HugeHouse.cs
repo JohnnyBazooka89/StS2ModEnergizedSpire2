@@ -57,7 +57,7 @@ public class HugeHouse : EnergizedSpire2Relic
         await PlayerCmd.LoseGold(DynamicVars.Gold.IntValue, Owner);
 
         await CreatureCmd.LoseMaxHp(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars.HpLoss.BaseValue,
-            false);
+            null);
 
         await AddCharacterStrike();
 

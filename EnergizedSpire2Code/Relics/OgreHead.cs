@@ -4,6 +4,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
 using MegaCrit.Sts2.Core.Models.RelicPools;
@@ -49,7 +50,7 @@ public class OgreHead : EnergizedSpire2Relic
 
         Flash();
         List<Creature> otherTargets = targets.Where(t => t != cardPlay.Target).ToList();
-        Owner.RunState.Rng.CombatTargets.Shuffle(otherTargets);
+        otherTargets.UnstableShuffle(Owner.RunState.Rng.CombatTargets);
 
         Traverse.Create(cardPlay)
             .Property("Target")

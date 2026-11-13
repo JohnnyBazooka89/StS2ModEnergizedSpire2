@@ -5,6 +5,7 @@ using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Creatures;
 using MegaCrit.Sts2.Core.Entities.Players;
 using MegaCrit.Sts2.Core.Entities.Relics;
+using MegaCrit.Sts2.Core.Extensions;
 using MegaCrit.Sts2.Core.GameActions.Multiplayer;
 using MegaCrit.Sts2.Core.HoverTips;
 using MegaCrit.Sts2.Core.Localization.DynamicVars;
@@ -52,7 +53,7 @@ public class SpiderWeb : EnergizedSpire2Relic
         }
 
         Flash();
-        Owner.RunState.Rng.Shuffle.Shuffle(attacks);
+        attacks.UnstableShuffle(Owner.RunState.Rng.Shuffle);
         attacks[0].EnergyCost.AddThisTurn(DynamicVars[EnergyCostIncreaseKey].IntValue);
         await CardCmd.Afflict<Entangled>(attacks[0], 1M);
     }
