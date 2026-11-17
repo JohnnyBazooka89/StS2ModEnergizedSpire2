@@ -6,6 +6,7 @@ using EnergizedSpire2.EnergizedSpire2Code.Relics;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Models;
 using MegaCrit.Sts2.Core.Models.Characters;
+using MegaCrit.Sts2.Core.Runs;
 
 namespace EnergizedSpire2.EnergizedSpire2Code.Ancients;
 
@@ -141,7 +142,10 @@ public class EnergizedSpire2Ancient : CustomAncientModel
         if (isSinglePlayer is null or true)
         {
             options.Add(AncientOption<MagnifyingGlass>());
-            options.Add(AncientOption<NeverEndingSparkler>());
+			if (RunManager.Instance.DebugOnlyGetState()?.GameMode != GameMode.Blitz)
+			{
+                options.Add(AncientOption<NeverEndingSparkler>());
+			}
             if (actNumber is null or 3)
             {
                 options.Add(AncientOption<RedRose>());
