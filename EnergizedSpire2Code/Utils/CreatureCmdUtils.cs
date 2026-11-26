@@ -1,0 +1,32 @@
+﻿using MegaCrit.Sts2.Core.Commands;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using MegaCrit.Sts2.Core.GameActions.Multiplayer;
+using MegaCrit.Sts2.Core.Models;
+
+namespace EnergizedSpire2.EnergizedSpire2Code.Utils;
+
+public static class CreatureCmdUtils
+{
+    public static async Task LoseMaxHpSafely(
+        PlayerChoiceContext context,
+        Creature creature,
+        int requestedMaxHpLoss,
+        CardModel? cardSource)
+    {
+        var safeMaxHpLoss = Math.Clamp(
+            requestedMaxHpLoss,
+            0,
+            Math.Max(0, creature.MaxHp - 1)
+        );
+
+        if (safeMaxHpLoss <= 0)
+            return;
+
+        await CreatureCmd.LoseMaxHp(
+            context,
+            creature,
+            safeMaxHpLoss,
+            false
+        );
+    }
+}
