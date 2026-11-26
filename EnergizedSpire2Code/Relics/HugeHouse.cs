@@ -1,4 +1,5 @@
 ﻿using BaseLib.Utils;
+using EnergizedSpire2.EnergizedSpire2Code.Utils;
 using MegaCrit.Sts2.Core.Commands;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using MegaCrit.Sts2.Core.Entities.Players;
@@ -56,8 +57,8 @@ public class HugeHouse : EnergizedSpire2Relic
 
         await PlayerCmd.LoseGold(DynamicVars.Gold.IntValue, Owner);
 
-        await CreatureCmd.LoseMaxHp(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars.HpLoss.BaseValue,
-            false);
+        await CreatureCmdUtils.LoseMaxHpSafely(new ThrowingPlayerChoiceContext(), Owner.Creature, DynamicVars.HpLoss.IntValue,
+            null);
 
         await AddCharacterStrike();
 
