@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
     <Import Project=".\Sts2PathDiscovery.props"/>
     <PropertyGroup>
+        <AssemblyName>EnergizedSpire2Mod</AssemblyName>
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>true</ImplicitUsings>
         <Nullable>enable</Nullable> <!--Makes code analysis regarding null values stricter.-->
@@ -57,12 +58,12 @@
     <Target Name="CopyToModsFolderOnBuild" AfterTargets="PostBuildEvent">
         <Message Text="Copying .dll .pdb and .json to mods folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/beta"/>
-        <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
+        <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/EnergizedSpire2Loader"/>
         <Copy SourceFiles="loadVersions" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/"/>
         <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/beta"/>
         <Message Text="Copying .dll and .json to Steam Workshop Release content folder." Importance="high"/>
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)/beta"/>
-        <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)"/>
+        <Copy SourceFiles="EnergizedSpire2.json" DestinationFolder="$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)/EnergizedSpire2Loader"/>
         <Copy SourceFiles="loadVersions" DestinationFolder="$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)"/>
     </Target>
 
@@ -79,11 +80,11 @@
 
     <Target Name="GodotPublish" AfterTargets="Publish" Condition="'$(GodotPath)' != '' and Exists('$(GodotPath)') and '$(IsInnerGodotExport)' != 'true'">
         <Message Text="Exporting Godot .pck to mods folder" Importance="high"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/beta/$(MSBuildProjectName).pck&quot;"
+        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)$(MSBuildProjectName)/beta/$(AssemblyName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
         <Message Text="Exporting Godot .pck to Steam Workshop Release content folder" Importance="high"/>
-        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)/beta/$(MSBuildProjectName).pck&quot;"
+        <Exec Command="&quot;$(GodotPath)&quot; --headless --export-pack &quot;BasicExport&quot; &quot;$(ModsPath)../$(MSBuildProjectName)/content/$(MSBuildProjectName)/beta/$(AssemblyName).pck&quot;"
               EnvironmentVariables="IsInnerGodotExport=true;MSBUILDDISABLENODEREUSE=1"
               ContinueOnError="WarnAndContinue"/>
     </Target>

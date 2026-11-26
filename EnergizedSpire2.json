@@ -11,10 +11,6 @@
     {
       "id": "BaseLib",
       "min_version": "v3.4.8"
-    },
-    {
-      "id": "EnergizedSpire2BranchCompatibility",
-      "min_version": "v0.0.1"
     }
   ],
   "affects_gameplay": true
